@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/QAPage">
+
+<head>
+
+<title>ipv4 - How do you calculate the prefix, network, subnet, and host numbers? - Network Engineering Stack Exchange</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/networkengineering/img/favicon.ico?v=64ed7a0468f6">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/networkengineering/img/apple-touch-icon.png?v=d66b1118cec8">
+    <link rel="search" type="application/opensearchdescription+xml" title="Network Engineering Stack Exchange" href="/opensearch.xml">
+        <meta property="og:type" content="website"/>
+    <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="@StackNetworkEng" />
+    <meta name="twitter:domain" content="networkengineering.stackexchange.com"/>
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/networkengineering/img/apple-touch-icon@2.png?v=2ae76539f625" />
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How do you calculate the prefix, network, subnet, and host numbers?" />
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Example:
+
+IP: 128.42.5.4
+
+In binary: 10000000 00101010 00000101 00000100
+
+Subnet: 255.255.248.0
+
+How could you determine the prefix, network, subnet, and host numbers?" />
+    <meta property="og:url" content="https://networkengineering.stackexchange.com/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers"/>
+    <link rel="canonical" href="https://networkengineering.stackexchange.com/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers" />
+
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.sstatic.net/Js/stub.en.js?v=3b3ab5e4246b"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.sstatic.net/Sites/networkengineering/all.css?v=d1a788521937">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;How do you calculate the prefix, network, subnet, and host numbers?&#39;" href="/feeds/question/7106">
+            <meta name="twitter:app:country" content="US" />
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:iphone" content="871299723" />
+            <meta name="twitter:app:url:iphone" content="se-zaphod://networkengineering.stackexchange.com/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers" />
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS" />
+            <meta name="twitter:app:id:ipad" content="871299723" />
+            <meta name="twitter:app:url:ipad" content="se-zaphod://networkengineering.stackexchange.com/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers" />
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://networkengineering.stackexchange.com/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+
+            StackExchange.ready(function () {
+                
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:7106});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('496', '7106');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text', false); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.ready(function () {
+                        StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToReputationNotifications('496');
+                StackExchange.realtime.subscribeToTopBarNotifications('496');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","serverTime":1512598929,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Network Engineering Stack Exchange","description":"Q&A for network engineers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":496,"childUrl":"https://networkengineering.meta.stackexchange.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"31686c40a43f2b1ecb6db0526cc43c02","tid":"5f303f72-86d9-964f-4b26-56f6e1aa5d65","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"canSeeNewHeaderDesign":true},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0,"workerIframeDomain":"https://cdn.sstatic.net"},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"topBar":{},"snippets":{"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"1871bd9f5ebc","js/moderator.en.js":"4257b61f9e71","js/full-anon.en.js":"109ce41d2279","js/full.en.js":"e65f222b398b","js/wmd.en.js":"194f49a1e0ae","js/third-party/jquery.autocomplete.min.js":"d3b8fa7fdf74","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"8e20e188854d","js/help.en.js":"f9152eb55343","js/tageditor.en.js":"10c2def076fb","js/tageditornew.en.js":"2562900d1f19","js/inline-tag-editing.en.js":"7581a98341e4","js/revisions.en.js":"47de10a8358f","js/review.en.js":"8c9ab848cbea","js/tagsuggestions.en.js":"b278f9a0b23b","js/post-validation.en.js":"1625b21d1438","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"b371f2c8cdc2","js/keyboard-shortcuts.en.js":"a7e9dc4fde0c","js/external-editor.en.js":"3e5baf662544","js/adops.en.js":"9a6a7812a212"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    <noscript id="noscript-css"><style>body,.top-bar{margin-top:1.9em}</style></noscript>
+</head>
+<body class="question-page new-topbar">
+    
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar">
+    <div class="-container">
+        <div class="-main">
+            
+                <a href="https://stackexchange.com" class="-logo js-gps-track">
+
+<svg aria-hidden="true" class="svg-icon native iconLogoSEAlternativeSm" width="110" height="15" viewBox="0 0 110 15"><g><path d="M50.4 11.92l-1.98-3.23-1.05 1.17v2.06h-1.42V2.08h1.42v6.07l2.76-3.24h1.73L49.4 7.66l2.77 4.26h-1.76zm-7.86.08c-1.6 0-3.16-.97-3.16-3.6 0-2.62 1.56-3.57 3.16-3.57.97 0 1.66.28 2.33.98l-.98.94c-.45-.48-.8-.66-1.35-.66s-1.01.22-1.32.62c-.3.39-.42.88-.42 1.7 0 .81.11 1.32.42 1.71.3.4.77.62 1.32.62s.9-.18 1.35-.66l.98.93c-.67.7-1.36.99-2.33.99zm-5.7-3.18h-1.67c-.84 0-1.27.38-1.27 1.01 0 .64.4 1 1.3 1 .54 0 .95-.05 1.33-.4.2-.21.3-.54.3-1.04v-.57zm.02 3.1v-.64c-.51.51-1 .72-1.88.72-.89 0-1.47-.2-1.9-.64a2.13 2.13 0 0 1-.57-1.5c0-1.17.83-2.02 2.45-2.02h1.87v-.5c0-.88-.44-1.3-1.55-1.3-.78 0-1.16.17-1.55.67l-.94-.87c.67-.77 1.37-1 2.55-1 1.94 0 2.92.8 2.92 2.4v4.68h-1.4zm-6.44 0c-1.33 0-1.95-.94-1.95-1.95V6.12h-.8V5.04h.8V2.9h1.43v2.13h1.37v1.08H29.9V9.9c0 .51.25.82.78.82h.59v1.2h-.85zm-6.9.08c-1.5 0-2.57-.35-3.52-1.3l1-.98a3.3 3.3 0 0 0 2.55.94c1.3 0 2.06-.55 2.06-1.5 0-.43-.13-.8-.4-1.03-.25-.23-.5-.33-1.09-.41l-1.17-.17a3.43 3.43 0 0 1-1.89-.79 2.43 2.43 0 0 1-.72-1.87c0-1.72 1.25-2.89 3.32-2.89 1.32 0 2.24.33 3.1 1.12l-.97.94a2.94 2.94 0 0 0-2.17-.76c-1.17 0-1.82.66-1.82 1.53 0 .36.12.68.38.91.25.22.66.39 1.12.46l1.13.16c.93.14 1.44.36 1.86.74.55.47.81 1.17.81 2.01 0 1.81-1.5 2.89-3.58 2.89z" fill="#FFF"/><path d="M107.4 6.88c-.2-.44-.61-.76-1.23-.76-.63 0-1.04.32-1.23.76-.12.27-.16.46-.17.79h2.8a2 2 0 0 0-.17-.8zm-2.63 2.04c0 .94.58 1.63 1.6 1.63.81 0 1.21-.23 1.68-.69l1.11 1.08a3.52 3.52 0 0 1-2.8 1.16c-1.74 0-3.4-.8-3.4-3.76 0-2.39 1.3-3.74 3.2-3.74 2.06 0 3.22 1.5 3.22 3.5v.82h-4.61zm-5.68-2.67c-1.1 0-1.2.92-1.2 1.9 0 .96.1 1.9 1.2 1.9 1.08 0 1.21-.94 1.21-1.9 0-.98-.13-1.9-1.21-1.9zm-.19 8.53c-1.13 0-1.9-.22-2.67-.96l1.14-1.15c.41.4.83.56 1.45.56 1.1 0 1.48-.77 1.48-1.51v-.75c-.48.53-1.03.73-1.75.73s-1.34-.24-1.76-.65c-.69-.68-.74-1.63-.74-2.9 0-1.29.05-2.21.74-2.9a2.5 2.5 0 0 1 1.77-.65c.78 0 1.29.21 1.8.77V4.7h1.78v7.05c0 1.76-1.26 3.04-3.24 3.04zm-5.58-2.77V7.58c0-1-.63-1.33-1.21-1.33s-1.23.33-1.23 1.33v4.43h-1.84V4.7h1.8v.67c.47-.5 1.15-.76 1.83-.76.74 0 1.33.24 1.74.65.6.59.75 1.28.75 2.08V12h-1.84zm-7.14-3.1h-1.46c-.66 0-1.03.32-1.03.84 0 .5.34.84 1.06.84.51 0 .84-.04 1.16-.35.2-.18.27-.48.27-.93v-.4zm.04 3.1v-.63c-.5.49-.96.7-1.8.7-.84 0-1.45-.21-1.89-.65-.4-.4-.6-1-.6-1.64 0-1.17.8-2.12 2.51-2.12h1.74V7.3c0-.8-.4-1.15-1.37-1.15-.7 0-1.03.17-1.42.6l-1.17-1.14c.72-.78 1.43-1 2.66-1 2.06 0 3.14.86 3.14 2.58V12h-1.8zm-7 0V7.54c0-.97-.62-1.3-1.2-1.3-.57 0-1.18.34-1.18 1.3v4.47H75V2h1.84v3.36c.5-.5 1.11-.76 1.76-.76 1.62 0 2.47 1.13 2.47 2.67v4.74h-1.84zm-7.7.09c-1.48 0-3.3-.8-3.3-3.76 0-2.97 1.82-3.74 3.3-3.74 1 0 1.77.31 2.42.99L72.7 6.82c-.38-.4-.7-.57-1.19-.57-.44 0-.78.15-1.05.47-.28.36-.4.85-.4 1.62 0 .77.12 1.28.4 1.63.27.33.61.48 1.05.48.48 0 .8-.17 1.19-.58l1.24 1.23c-.65.67-1.41 1-2.43 1zm-6.07-.1l-1.36-2.2-1.34 2.2h-2.2l2.54-3.74-2.45-3.58h2.2l1.25 2.1 1.26-2.1h2.2l-2.44 3.58L67.65 12h-2.2zm-12.46 0V2h6.63v1.74h-4.66V6.1h3.97v1.75h-3.97v2.43h4.66V12H53z" fill="#2F96E8"/><path d="M2 1h8a2 2 0 0 1 2 2H0c0-1.1.9-2 2-2z" fill="#8FD8F7"/><path d="M0 10h12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm7 2v3l3-3z" fill="#155397"/><path fill="#46A2D9" d="M0 4h12v2H0z"/><path fill="#2D6DB5" d="M0 7h12v2H0z"/></g></svg>                </a>
+
+
+                <nav class="navigation" role="navigation" aria-label="site navigation">
+                    <ol class="-list">
+                    </ol>
+                </nav>
+
+        </div>
+        
+            <form id="search" action="/search" method="get" class="searchbar" autocomplete="off" role="search">
+                <input name="q" type="text" placeholder="Search on Network Engineering…" value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field" />
+                <button type="submit" aria-label="Search..." class="btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"/></svg></button>
+            </form>
+
+        
+
+
+    
+
+<div class="-actions">
+    <nav class="secondary-nav">
+        <div class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://networkengineering.stackexchange.com">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+            <a href="https://networkengineering.stackexchange.com/help" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:14 })"
+>help</a>
+                    <a href="https://chat.stackexchange.com?tab=site&amp;host=networkengineering.stackexchange.com" class="js-gps-track"     data-gps-track="site_switcher.click({ item_type:6 })"
+>chat</a>
+            </div>
+    <a href="https://networkengineering.stackexchange.com"
+       class="current-site-link site-link js-gps-track"
+       data-id="496"
+       data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-networkengineering site-icon" title="Network Engineering"></div>
+        Network Engineering
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://networkengineering.meta.stackexchange.com"
+       class="site-link js-gps-track"
+       data-id="497"
+       data-gps-track="site.switch({ target_site:497, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-networkengineeringmeta site-icon" title="Network Engineering Meta"></div>
+        Network Engineering Meta
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://networkengineering.stackexchange.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fnetworkengineering.stackexchange.com%2fquestions%2f7106%2fhow-do-you-calculate-the-prefix-network-subnet-and-host-numbers" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:10 })"
+>Sign up</a> or <a href="https://networkengineering.stackexchange.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fnetworkengineering.stackexchange.com%2fquestions%2f7106%2fhow-do-you-calculate-the-prefix-network-subnet-and-host-numbers" class="login-link js-gps-track"     data-gps-track="site_switcher.click({ item_type:11 })"
+>log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+                <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://networkengineering.meta.stackexchange.com" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+        </div>
+        <ol class="-list">
+    <li class="-item">
+        <a href="#" class="-link js-inbox-button" title="Recent inbox messages">
+            <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"/></svg>
+            <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+        </a>
+    </li>
+    <li class="-item">
+        <a href="#" class="-link js-achievements-button" title="Recent achievements: reputation, badges, and privileges earned" data-unread-class="_highlighted-positive">
+            <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"/></svg>
+            <span class="indicator-badge js-unread-count _positive" style="display: none;"></span>
+        </a>
+    </li>
+
+    <li class="-item"><a href="#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"/></svg>
+    </a></li>
+
+                <li class="-item">
+        <a href="https://stackexchange.com" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 171 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"/></svg>
+        </a>
+    </li>
+
+        </ol>
+    </nav>
+        <div class="-ctas">
+                <a href="https://networkengineering.stackexchange.com/users/login?ssrc=head&returnurl=https%3a%2f%2fnetworkengineering.stackexchange.com%2fquestions%2f7106%2fhow-do-you-calculate-the-prefix-network-subnet-and-host-numbers" class="login-link btn-clear" rel="nofollow">Log In</a>
+                    <a href="https://networkengineering.stackexchange.com/users/signup?ssrc=head&returnurl=https%3a%2f%2fnetworkengineering.stackexchange.com%2fquestions%2f7106%2fhow-do-you-calculate-the-prefix-network-subnet-and-host-numbers" class="login-link btn-topbar-primary" rel="nofollow">Sign Up</a>
+
+        </div>
+</div>
+    </div>
+</header>
+
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container  ">
+            <div id="header">
+                <br class="cbt">
+                <div id="hlogo">
+                    <a href="https://networkengineering.stackexchange.com"
+                       class="js-gps-track"
+                        data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        Network Engineering
+                    </a>
+                </div>
+                <div id="hmenus">
+                        <div class="nav mainnavs" role="navigation" aria-label="site navigation">
+                            <ul>
+                                    <li class="youarehere">
+        <a id="nav-questions"
+           href="/questions"
+           class="js-gps-track"
+           data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+        Questions
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-tags"
+           href="/tags"
+           class="js-gps-track"
+           data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+        Tags
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-users"
+           href="/users"
+           class="js-gps-track"
+           data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+        Users
+        </a>
+    </li>
+
+                                    <li>
+        <a id="nav-badges"
+           href="/help/badges"
+           class="js-gps-track"
+           data-gps-track="top_nav.click({is_current:false, location:2, destination:4})">
+        Badges
+        </a>
+    </li>
+
+    <li>
+        <a id="nav-unanswered"
+           href="/unanswered"
+           class="js-gps-track"
+           data-gps-track="top_nav.click({is_current:false, location:2, destination:5})">
+        Unanswered
+        </a>
+    </li>
+                            </ul>
+                        </div>
+                    <div class="nav askquestion" role="navigation" aria-label="ask new question">
+                        <ul>
+                            <li>
+                                <a id="nav-askquestion"   href="/questions/ask"  >Ask Question</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+
+
+
+
+        <div id="content">
+
+
+            
+
+<div itemscope itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/networkengineering/img/apple-touch-icon.png?v=d66b1118cec8">
+
+
+<div id="herobox" class="js-dismissable-hero" data-campaign-name="nso">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Network Engineering Stack Exchange is a question and answer site for network engineers. Join them; it only takes a minute:
+            <br />
+            <br />
+            <a href="/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2fnetworkengineering.stackexchange.com%2fquestions%2f7106%2fhow-do-you-calculate-the-prefix-network-subnet-and-host-numbers" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Here&#39;s how it works:</b>
+            <ol id="hiw">
+                <li id="q">
+                    Anybody can ask a question
+                </li>
+                <li id="an">
+                    Anybody can answer
+                </li>
+                <li id="b">
+                    The best answers are voted up and rise to the top
+                </li>
+            </ol>
+        </div>
+    <div style="clear: both"></div>
+    </div>
+</div><script>
+    StackExchange.ready(function () {
+
+        StackExchange.Hero.init("nso", "a");
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+
+        $('#tell-me-more').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+
+        $('.js-dismissable-hero #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+              });
+
+            StackExchange.Hero.dismiss();
+
+            $.ajax({
+                url: "/hero-mini",
+                success: function (data) {
+                    $(".js-dismissable-hero").fadeOut("fast", function () {
+                        $(".js-dismissable-hero").replaceWith(data);
+                        $("#herobox-mini").fadeIn("fast");
+                    });
+                }
+            });
+            return false;
+        });
+    });
+</script>    <div class="inner-content">
+            <div id="question-header">
+                <h1 itemprop="name"><a href="/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers" class="question-hyperlink">How do you calculate the prefix, network, subnet, and host numbers?</a></h1>
+
+            
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="7106"  id="question">
+
+        <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="7106">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">57</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b>67</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>Example:</p>
+
+<p>IP: 128.42.5.4</p>
+
+<p>In binary: 10000000 00101010 00000101 00000100</p>
+
+<p>Subnet: 255.255.248.0</p>
+
+<p>How could you determine the prefix, network, subnet, and host numbers?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="/questions/tagged/ipv4" class="post-tag" title="show questions tagged &#39;ipv4&#39;" rel="tag">ipv4</a> <a href="/questions/tagged/subnet" class="post-tag" title="show questions tagged &#39;subnet&#39;" rel="tag">subnet</a> 
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/q/7106" title="short permalink to this question" class="short-link" id="link-post-7106">share</a><span class="lsep">|</span><a href="/posts/7106/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="/posts/7106/revisions" title="show all edits to this post">edited <span title="2014-03-31 11:29:34Z" class="relativetime">Mar 31 '14 at 11:29</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/775/mike-pennington"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/ce84c3fb1d8cbce03a2f03f0011f52d3?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/775/mike-pennington">Mike Pennington</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 22,263" dir="ltr">22.3k</span><span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span><span title="56 silver badges"><span class="badge2"></span><span class="badgecount">56</span></span><span title="120 bronze badges"><span class="badge3"></span><span class="badgecount">120</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2014-03-31 01:06:08Z" class="relativetime">Mar 31 '14 at 1:06</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/5032/user5032"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/0d65322a871a797806b9307966d142fb?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/5032/user5032">user5032</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">309</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7106" class="comments js-comments-container  dno">
+		        <table>
+                    <tbody class="js-comments-list"
+                           data-remaining-comments-count="0"
+                           data-canpost="false"
+                           data-cansee="true"
+                           data-comments-unavailable="false"
+                           data-addlink-disabled="true">
+
+                            <tr><td></td><td></td></tr>
+                    </tbody>
+		        </table>
+	    </div>
+
+        <div id="comments-link-7106" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>        </table>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2 data-answercount="3">
+                                3 Answers
+                                <span style="display:none;" itemprop="answerCount">3</span>
+                        </h2>
+                        <div>
+                            <div id="tabs">
+        <a href="/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="/questions/7106/how-do-you-calculate-the-prefix-network-subnet-and-host-numbers?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  
+<a name="7117"></a>
+<div id="answer-7117" class="answer accepted-answer" data-answerid="7117"  itemscope itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="7117">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">104</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<h2>Calculating the Netmask Length (also called a prefix):</h2>
+
+<p>Convert the dotted-decimal representation of the netmask to binary.  Then,  count the number of contiguous 1 bits, starting at the most significant bit in the first octet (i.e. the left-hand-side of the binary number).</p>
+
+<pre><code>255.255.248.0   in binary: 11111111 11111111 11111000 00000000
+                           -----------------------------------
+                           I counted twenty-one 1s             -------&gt; /21
+</code></pre>
+
+<p>The prefix of 128.42.5.4 with a 255.255.248.0 netmask is /21.</p>
+
+<h2>Calculating the Network Address:</h2>
+
+<p>The network address is the logical AND of the respective bits in the binary representation of the IP address and network mask.  Align the bits in both addresses, and perform a logical AND on each pair of the respective bits.  Then convert the individual octets of the result back to decimal.</p>
+
+<p>Logical AND truth table:</p>
+
+<p><img src="https://i.stack.imgur.com/e5tIQ.png" alt="Logical AND"></p>
+
+<pre><code>128.42.5.4      in binary: 10000000 00101010 00000101 00000100
+255.255.248.0   in binary: 11111111 11111111 11111000 00000000
+                           ----------------------------------- [Logical AND]
+                           10000000 00101010 00000000 00000000 ------&gt; 128.42.0.0
+</code></pre>
+
+<p>As you can see, the network address of 128.42.5.4/21 is 128.42.0.0</p>
+
+<h2>Calculating the Broadcast Address:</h2>
+
+<p>The broadcast address converts all host bits to 1s...</p>
+
+<p>Remember that our IP address in decimal is:</p>
+
+<pre><code>128.42.5.4      in binary: 10000000 00101010 00000101 00000100
+</code></pre>
+
+<p>The network mask is:</p>
+
+<pre><code>255.255.248.0   in binary: 11111111 11111111 11111000 00000000
+</code></pre>
+
+<p>This means our host bits are the last 11 bits of the IP address, because we find the host mask by inverting the network mask:</p>
+
+<pre><code>Host bit mask            : 00000000 00000000 00000hhh hhhhhhhh
+</code></pre>
+
+<p>To calculate the broadcast address, we force all host bits to be 1s:</p>
+
+<pre><code>128.42.5.4      in binary: 10000000 00101010 00000101 00000100
+Host bit mask            : 00000000 00000000 00000hhh hhhhhhhh
+                           ----------------------------------- [Force host bits]
+                           10000000 00101010 00000111 11111111 ----&gt; 128.42.7.255
+</code></pre>
+
+<h2>Calculating subnets:</h2>
+
+<p>You haven't given enough information to calculate subnets for this network; as a general rule you build subnets by reallocating some of the host bits as network bits for each subnet.  Many times there isn't one right way to subnet a block... depending on your constraints, there could be several valid ways to subnet a block of addresses.</p>
+
+<p>Let's assume we will break 128.42.0.0/21 into 4 subnets that must hold at least 100 hosts each...</p>
+
+<p><img src="https://i.stack.imgur.com/wHlF8.png" alt="subnetting"></p>
+
+<p>In this example, we know that you need at least a /25 prefix to contain 100 hosts; I chose a /24 because it falls on an octet boundary.  Notice that the network address for each subnet borrows host bits from the parent network block.</p>
+
+<h3>Finding the required subnet masklength or netmask:</h3>
+
+<p>How did I know that I need at least a /25 masklength for 100 hosts?  Calculate the prefix by backing into the number of host bits required to contain 100 hosts.  One needs 7 host bits to contain 100 hosts.  Officially this is calculated with:</p>
+
+<p><em>Host bits</em> = Log<sub>2</sub>(Number-of-hosts) = Log<sub>2</sub>(100) = 6.643</p>
+
+<p>Since IPv4 addresses are 32 bits wide, and we are using the host bits (i.e. least significant bits), simply subtract 7 from 32 to calculate the minimum subnet prefix for each subnet... 32 - 7 = 25.</p>
+
+<h3>The lazy way to break 128.42.0.0/21 into four equal subnets:</h3>
+
+<p>Since we only want four subnets from the whole 128.42.0.0/21 block, we could use /23 subnets.  I chose /23 because we need 4 subnets... i.e. an extra two bits added to the netmask.</p>
+
+<p>This is an equally-valid answer to the constraint, using /23 subnets of 128.42.0.0/21...</p>
+
+<p><img src="https://i.stack.imgur.com/nKRVg.png" alt="subnetting, 2nd option"></p>
+
+<h2>Calculating the host number:</h2>
+
+<p>This is what we've already done above... just reuse the host mask from the work we did when we calculated the broadcast address of 128.42.5.4/21...  This time I'll use 1s instead of <code>h</code>, because we need to perform a logical AND on the network address again.</p>
+
+<pre><code>128.42.5.4      in binary: 10000000 00101010 00000101 00000100
+Host bit mask            : 00000000 00000000 00000111 11111111
+                           ----------------------------------- [Logical AND]
+                           00000000 00000000 00000101 00000100 -----&gt; 0.0.5.4
+</code></pre>
+
+<h2>Calculating the maximum possible number of hosts in a subnet:</h2>
+
+<p>To find the maximum number of hosts, look at the number of binary bits in the host number above.  The easiest way to do this is to subtract the netmask length from 32 (number of bits in an IPv4 address).  This gives you the number of host bits in the address.  At that point...</p>
+
+<p><em>Maximum Number of hosts</em> = 2**(32 - netmask_length) - 2</p>
+
+<p>The reason we subtract 2 above is because the all-ones and all-zeros host numbers are reserved.  The all-zeros host number is the network number; the all-ones host number is the broadcast address.</p>
+
+<p>Using the example subnet of 128.42.0.0/21 above, the number of hosts is...</p>
+
+<p><em>Maximum Number of hosts</em> = 2**(32 - 21) - 2 = 2048 - 2 = 2046</p>
+
+<h2>Finding the minimum netmask which contains two IP addresses:</h2>
+
+<p>Suppose someone gives us two IP addresses and expects us to find the longest netmask which contains both of them; for example, what if we had:</p>
+
+<ul>
+<li>128.42.5.17</li>
+<li>128.42.5.67</li>
+</ul>
+
+<p>The easiest thing to do is to convert both to binary and look for the longest string of network-bits from the left-hand side of the address.</p>
+
+<pre><code>128.42.5.17     in binary: 10000000 00101010 00000101 00010001
+128.42.5.67     in binary: 10000000 00101010 00000101 01000011
+                           ^                           ^     ^
+                           |                           |     |
+                           +--------- Network ---------+Host-+
+                             (All bits are the same)    Bits
+</code></pre>
+
+<p>In this case the minimum netmask would be /25</p>
+
+<p>NOTE: If you try starting from the right-hand side, don't get tricked just because you find one matching column of bits; there could be unmatched bits beyond those matching bits.  Honestly, the safest thing to do is to start from the left-hand side.</p>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/7117" title="short permalink to this answer" class="short-link" id="link-post-7117">share</a><span class="lsep">|</span><a href="/posts/7117/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/7117/revisions" title="show all edits to this post">edited <span title="2017-10-17 13:43:59Z" class="relativetime">Oct 17 at 13:43</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/40513/0ttt0"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/3252ceecff3c6283bca24f59e72eca21?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/40513/0ttt0">0TTT0</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">109</span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2014-03-31 10:38:08Z" class="relativetime">Mar 31 '14 at 10:38</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/775/mike-pennington"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/ce84c3fb1d8cbce03a2f03f0011f52d3?s=32&amp;d=identicon&amp;r=PG" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/775/mike-pennington">Mike Pennington</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 22,263" dir="ltr">22.3k</span><span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span><span title="56 silver badges"><span class="badge2"></span><span class="badgecount">56</span></span><span title="120 bronze badges"><span class="badge3"></span><span class="badgecount">120</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7117" class="comments js-comments-container  dno">
+		        <table>
+                    <tbody class="js-comments-list"
+                           data-remaining-comments-count="0"
+                           data-canpost="false"
+                           data-cansee="true"
+                           data-comments-unavailable="false"
+                           data-addlink-disabled="true">
+
+                            <tr><td></td><td></td></tr>
+                    </tbody>
+		        </table>
+	    </div>
+
+        <div id="comments-link-7117" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="18942"></a>
+<div id="answer-18942" class="answer" data-answerid="18942"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="18942">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The answer above hits the nail on the head perfectly. However, when I first started out, it took me a few different examples from a couple of sources for it to really hit home. Therefore, if you're interested in other examples, I wrote a few blog posts on the subject - <a href="http://www.oznetnerd.com/category/subnetting/">http://www.oznetnerd.com/category/subnetting/</a></p>
+
+<p>Admins, if this post is considered spam, please feel free to delete it.</p>
+
+<p>Edit: As per YLearn's suggestion, I'll try to grab the relevant parts from Part 1 of my series, without pasting the whole entry here.</p>
+
+<p>Let's use 195.70.16.159/30 as an example.</p>
+
+<p>As it is a /30, we know the host portion is going to be in the fourth octet. Let's convert that to binary:</p>
+
+<pre><code>128 64 32 16  8  4 2 1
+SN  SN SN SN SN SN H H
+ 1   0  0  1  1  1 1 1
+</code></pre>
+
+<p>Now to find out the network address all we do is add the SN bits that have a 1 underneath them, together. (128 + 16 + 8 + 4 = 156).</p>
+
+<p>When you add this 156 to the first three octets of the address, we’re left with the <strong>Network Address</strong> 195.70.16.156.</p>
+
+<p>Now, as we know that the <strong>first usable address is always the Network Address plus one,</strong> all we need to do is perform the following calculation: (156 + 1 = 157).</p>
+
+<p>This gives us a <strong>First Usable Address</strong> of 195.70.16.157.</p>
+
+<p>Now let’s skip the Last Usable Address for a moment and find the Broadcast Address. To find out what it is, all we need to do is add all of the H bits together (regardless of whether they are a 1 or a 0) and then add this number to the Network Address. (2 + 1 + 156 = 159).</p>
+
+<p>This gives us a <strong>Broadcast Address</strong> of 195.70.16.159.</p>
+
+<p>And finally, let’s work out the last usable address. This process is similar to finding the First Usable Address, however, instead of adding one to the network address, we actually subtract one from the Broadcast Address. (159 – 1 = 158).</p>
+
+<p>This gives us a <strong>Last Usable Address</strong> of 195.70.16.158.</p>
+
+<p>And there we have it! Our temaplte is complete. For easy reference, here it is again:</p>
+
+<ul>
+<li><strong>Network Address:</strong> 195.70.16.156</li>
+<li><strong>First Usable Address:</strong> 195.70.16.157</li>
+<li><strong>Last Usable Address:</strong> 195.70.16.158</li>
+<li><strong>Broadcast Address:</strong> 195.70.16.159</li>
+</ul>
+
+<p>As a shortcut, you can also use this formula. It works on subnets of any size:</p>
+
+<ul>
+<li><strong>First Usable Address</strong> = Network Address + 1 </li>
+<li><strong>Broadcast Address</strong> = Next Network Address – 1</li>
+<li><strong>Last Usable Address</strong> = Broadcast Address – 1</li>
+</ul>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/18942" title="short permalink to this answer" class="short-link" id="link-post-18942">share</a><span class="lsep">|</span><a href="/posts/18942/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/18942/revisions" title="show all edits to this post">edited <span title="2015-06-04 04:36:18Z" class="relativetime">Jun 4 '15 at 4:36</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-06-03 23:19:46Z" class="relativetime">Jun 3 '15 at 23:19</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/129/oznetnerd"><div class="gravatar-wrapper-32"><img src="https://i.stack.imgur.com/XaYsS.png?s=32&amp;g=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/129/oznetnerd">OzNetNerd</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,658</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="13 bronze badges"><span class="badge3"></span><span class="badgecount">13</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-18942" class="comments js-comments-container ">
+		        <table>
+                    <tbody class="js-comments-list"
+                           data-remaining-comments-count="0"
+                           data-canpost="false"
+                           data-cansee="true"
+                           data-comments-unavailable="false"
+                           data-addlink-disabled="true">
+
+
+
+    <tr id="comment-28286" class="comment js-comment ">
+        <td class="js-comment-actions comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Not spam, but could you please edit your post to provide more details from the link? To avoid problems with link rot, the community prefers that you <a href="http://meta.stackexchange.com/q/8231/244349">quote important content and provide the link as reference</a> whenever possible.</span>
+                    &ndash;&nbsp;<a href="/users/33/ylearn"
+                       title="17,576 reputation"
+                       class="comment-user">YLearn<span class="mod-flair" title="moderator">&#9830;</span></a>
+                <span class="comment-date" dir="ltr"><span title="2015-06-04 01:02:25Z" class="relativetime-clean">Jun 4 '15 at 1:02</span></span>
+                                                                            </div>
+        </td>
+    </tr>
+    <tr id="comment-28296" class="comment js-comment ">
+        <td class="js-comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thanks for the comment YLearn. The information is broken across three blog posts, all of which should really be read together. If I were to copy and paste bits and pieces I feel like they will lose their value and may even cause confusion. Edit: I&#39;ll give it a try though :)</span>
+                    &ndash;&nbsp;<a href="/users/129/oznetnerd"
+                       title="1,658 reputation"
+                       class="comment-user">OzNetNerd</a>
+                <span class="comment-date" dir="ltr"><span title="2015-06-04 04:21:09Z" class="relativetime-clean">Jun 4 '15 at 4:21</span></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+        </td>
+    </tr>
+    <tr id="comment-28302" class="comment js-comment ">
+        <td class="js-comment-actions comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received"
+                                      class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Tiny (almost insignificant) caveat: the Last Usable Address formula at the bottom works for all subnets except a /31... see <a href="https://tools.ietf.org/html/rfc3021" rel="nofollow noreferrer">RFC 3021</a>.  It&#39;s a small but relevant exception if someone tried to use your algorithm in code.</span>
+                    &ndash;&nbsp;<a href="/users/775/mike-pennington"
+                       title="22,263 reputation"
+                       class="comment-user">Mike Pennington</a>
+                <span class="comment-date" dir="ltr"><span title="2015-06-04 07:34:39Z" class="relativetime-clean">Jun 4 '15 at 7:34</span></span>
+                                                                            </div>
+        </td>
+    </tr>
+                    </tbody>
+		        </table>
+	    </div>
+
+        <div id="comments-link-18942" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+
+  
+<a name="45383"></a>
+<div id="answer-45383" class="answer" data-answerid="45383"  itemscope itemtype="http://schema.org/Answer">
+    <table>
+        <tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="45383">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Example:</p>
+
+<p>IP: 128.42.5.4</p>
+
+<p>In binary: 10000000 00101010 00000101 00000100</p>
+
+<p>Subnet: 255.255.248.0</p>
+
+<p>How could you determine the prefix, network, subnet, and host numbers?</p>
+
+<pre><code>      32768     16384  8192  4096  2048  1024   512   256  ----&gt; Binary
+        128       192   224   240   248   252   254   255  ----&gt; Sunet Mask
+        /17       /18   /19   /20   /21   /22   /23   /24  ----&gt; CIDR  
+      32766     16382  8190  3094  2046  1022   510   254  ----&gt; Host
+
+
+      128     64    32     16     8     4    2     1   ----&gt; Binary
+      128    192   224    240   248   252   254   255  ----&gt; Sunet Mask
+      /25    /26   /27    /28   /29   /30   /31   /32  ----&gt; CIDR  
+      126     62    30     14     6     2    *     -   ----&gt; Host 
+
+     128        64        32       16        8         4         2        1
+  10000000   01000000  00100000 00010000  00001000  00000100  00000010   00000001
+</code></pre>
+
+<hr>
+
+<pre><code>   Example 
+   Network=192.168.1.0 /24;  
+   Network Address with Subnet mask =  192.168.1.0 subnet 255.255.255.0 
+   Ip address range 192.168.1.0----192.168.1.255
+   Fist available ip address  192.168.1.1; 
+   Last available ip address  192.168.1.254; 
+   Broadcast address = 192.168.1.255;
+   254 Host
+</code></pre>
+
+<hr>
+
+<pre><code>   Network=192.168.1.0 /25;
+   Network Address with Subnet mask =  192.168.1.0 subnet 255.255.255.128
+   Ip address range 192.168.1.0----192.168.1.128
+   Fist available ip address  192.168.1.1; 
+   Last available ip address  192.168.1.126;
+   Broadcast address = 192.168.1.127;  
+   126 Hosts
+</code></pre>
+
+<hr>
+
+<pre><code>   When the CIDR increased ex. /24. /25.  the network will divided by the 
+   binary number.
+   /25  increase network   0-128| 128- 256 |                   you will have 2 Networks 
+   /26  increase network   0-64 | 64 - 128 | 128-192 | 192-256 you will have 4 Networks 
+    .
+    .
+    .
+   /32......
+</code></pre>
+    </div>
+    <table class="fw">
+    <tr>
+    <td class="vt">
+<div class="post-menu"><a href="/a/45383" title="short permalink to this answer" class="short-link" id="link-post-45383">share</a><span class="lsep">|</span><a href="/posts/45383/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="/posts/45383/revisions" title="show all edits to this post">edited <span title="2017-11-06 16:33:02Z" class="relativetime">Nov 6 at 16:33</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2017-11-01 04:59:14Z" class="relativetime">Nov 1 at 4:59</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="/users/41070/bkpxfdifo"><div class="gravatar-wrapper-32"><img src="https://www.gravatar.com/avatar/ca4530ebea5563a492ea6e1ac610a6c4?s=32&amp;d=identicon&amp;r=PG&amp;f=1" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="/users/41070/bkpxfdifo">bkpxfdifo</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">21</span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </table>
+</td>
+        </tr>
+    
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-45383" class="comments js-comments-container  dno">
+		        <table>
+                    <tbody class="js-comments-list"
+                           data-remaining-comments-count="0"
+                           data-canpost="false"
+                           data-cansee="true"
+                           data-comments-unavailable="false"
+                           data-addlink-disabled="true">
+
+                            <tr><td></td><td></td></tr>
+                    </tbody>
+		        </table>
+	    </div>
+
+        <div id="comments-link-45383" data-rep=50 data-anon=true>
+
+                <a class="js-add-link comments-link disabled-link "
+                   title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."
+                   >add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href=# onclick=""></a>
+        </div>         
+    </td>
+</tr>    </table>
+</div>
+                    <div class="question-status">
+        <h2>                    <b>protected</b> by <a href="/users/33/ylearn">YLearn</a><span class="mod-flair" title="moderator">&#9830;</span> <span dir="ltr"><span title="2015-06-04 01:02:47Z" class="relativetime">Jun 4 '15 at 1:02</span></span>
+</h2>
+        <p>
+Thank you for your interest in this question. 
+Because it has attracted low-quality or spam answers that had to be removed, posting an answer now requires 10 <a href="/help/whats-reputation">reputation</a> on this site (the <a href="/help/privileges/new-user">association bonus does not count</a>).
+<br /><br />
+Would you like to answer one of these <a href="/unanswered?fromProtectedNotice=true">unanswered questions</a> instead?
+</p>
+    </div>
+
+
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you&#39;re looking for?                            Browse other questions tagged <a href="/questions/tagged/ipv4" class="post-tag" title="show questions tagged &#39;ipv4&#39;" rel="tag">ipv4</a> <a href="/questions/tagged/subnet" class="post-tag" title="show questions tagged &#39;subnet&#39;" rel="tag">subnet</a>  or <a href="/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2014-03-31 01:06:08Z"><b>3 years, 8 months ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>363,797 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="?lastactivity" class="lastactivity-link" title="2017-11-06 16:33:02Z">30 days ago</a></b></p>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+            <div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr />
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="https://stackoverflow.blog/2017/12/04/designing-channels/" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="https://stackoverflow.blog/2017/12/04/designing-channels/" class="question-hyperlink">How We’re Designing Channels</a>
+                </div>
+                <br class="cbt" />
+            </div>
+    </div>
+</div>            
+<div id="dfp-tsb"></div>
+        <script>setTimeout(function () { try { typeof clc !== 'undefined' && typeof clc.loadDisplayAds === 'function' && clc.loadDisplayAds(['dfp-tsb']); } catch (e) { console.error(e); } }, 0);</script>
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="/q/19415" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/19415/what-are-the-differences-between-network-host-loopback-and-broadcast-address?noredirect=1" class="question-hyperlink">What are the differences between network, host, loopback and broadcast address?</a>
+</div>
+<div class="spacer">
+	<a href="/q/18340" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/18340/why-do-i-get-8-addresses-and-6-hosts-on-a-29-subnet?noredirect=1" class="question-hyperlink">Why do I get 8 addresses and 6 hosts on a /29 subnet?</a>
+</div>
+<div class="spacer">
+	<a href="/q/20710" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="/questions/20710/how-to-divide-a-class-c-address-into-four-subnets?noredirect=1" class="question-hyperlink">How to divide a class c address into four subnets</a>
+</div>
+<div class="spacer">
+	<a href="/q/28121" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/28121/maximum-number-of-subnets?noredirect=1" class="question-hyperlink">Maximum number of Subnets</a>
+</div>
+<div class="spacer">
+	<a href="/q/38656" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/38656/how-to-calculate-random-subnet-first-last-address?noredirect=1" class="question-hyperlink">How to calculate random subnet first/last address</a>
+</div>
+<div class="spacer">
+	<a href="/q/19055" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="/questions/19055/question-what-is-the-last-valid-host-on-the-subnetwork-172-28-0-0-20?noredirect=1" class="question-hyperlink">Question: What is the last valid host on the subnetwork 172.28.0.0/20?</a>
+</div>
+<div class="spacer">
+	<a href="/q/22697" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="/questions/22697/subnetting-a-class-a-ip?noredirect=1" class="question-hyperlink">Subnetting a Class A IP</a>
+</div>
+<div class="spacer">
+	<a href="/q/25038" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">2</div>
+	</a>
+	<a href="/questions/25038/calculating-valid-hosts?noredirect=1" class="question-hyperlink">Calculating valid hosts</a>
+</div>
+<div class="spacer">
+	<a href="/q/36320" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="/questions/36320/what-is-the-destination-address?noredirect=1" class="question-hyperlink">What is the Destination Address?</a>
+</div>
+<div class="spacer">
+	<a href="/q/25691" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="/questions/25691/trying-to-learn-about-subnetting-and-borrowing-bits-can-anyone-shed-light?noredirect=1" class="question-hyperlink">Trying to learn about subnetting and borrowing bits, can anyone shed light?</a>
+</div>					<div class="spacer more">
+				<a href="/questions/linked/7106">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer"><a href="/q/6361" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">5</div></a><a href="/questions/6361/how-is-the-ip-prefix-passed-to-the-router" class="question-hyperlink">How is the IP prefix passed to the router?</a></div><div class="spacer"><a href="/q/12692" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="/questions/12692/how-to-divide-network-into-subnets" class="question-hyperlink">How to divide network into subnets?</a></div><div class="spacer"><a href="/q/13335" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="/questions/13335/subnetting-how-to-calculate-hosts-and-subnets-if-p-n" class="question-hyperlink">Subnetting. How to calculate hosts and subnets if /P &lt; N</a></div><div class="spacer"><a href="/q/23836" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">2</div></a><a href="/questions/23836/given-ip-cidr-and-subnet-mask-calculate-of-subnets-and-of-hosts-per-subnet" class="question-hyperlink">Given IP/CIDR and subnet mask - calculate # of subnets and # of hosts per subnet</a></div><div class="spacer"><a href="/q/26439" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">-1</div></a><a href="/questions/26439/determine-the-number-of-hosts-from-ip-address-prefix" class="question-hyperlink">Determine the number of hosts from IP address prefix</a></div><div class="spacer"><a href="/q/29507" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="/questions/29507/is-this-explanation-correct-how-to-determine-if-an-ip-address-is-on-the-same-s" class="question-hyperlink">Is this explanation correct - how to determine if an IP address is on the same subnet</a></div><div class="spacer"><a href="/q/30951" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="/questions/30951/subnet-mask-which-allows-a-maximum-number-of-hosts-per-subnet" class="question-hyperlink">Subnet mask, which allows a maximum number of hosts per subnet</a></div><div class="spacer"><a href="/q/38656" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="/questions/38656/how-to-calculate-random-subnet-first-last-address" class="question-hyperlink">How to calculate random subnet first/last address</a></div><div class="spacer"><a href="/q/39979" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="/questions/39979/how-to-find-number-of-subnets" class="question-hyperlink">How to find number of subnets?</a></div><div class="spacer"><a href="/q/43456" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="/questions/43456/subnet-block-size-and-number-of-hosts-per-subnet" class="question-hyperlink">Subnet block size and number of hosts per subnet</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot"
+           class="js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li >
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2553381/given-a-convergent-series-of-positive-rationals-how-many-subseries-can-converge" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Given a convergent series of positive rationals, how many subseries can converge to the same number?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-music" title="Music: Practice &amp; Theory Stack Exchange"></div><a href="https://music.stackexchange.com/questions/64292/can-vi-have-a-dominant-function" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can VI have a dominant function?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="https://travel.stackexchange.com/questions/106300/4-people-in-a-cab-in-london-is-that-allowed" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    4 people in a cab in London? Is that allowed?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/7698/how-to-respond-to-an-unfalsifiable-accusation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to respond to an unfalsifiable accusation?
+                </a>
+
+            </li>
+            <li >
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/7727/how-do-i-respond-to-someone-saying-yes-to-would-anyone-like-the-last-item" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do I respond to someone saying yes to &quot;Would anyone like the last [Item]?&quot;?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/111248/how-can-i-cast-spells-as-a-hexblade-warlock-while-using-a-sword-and-shield" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I cast spells as a Hexblade Warlock while using a sword and shield?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/175698/short-story-about-the-monster-under-her-bed-where-the-monster-protects-the-gi" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Short story about &quot;the monster under her bed&quot;, where the monster protects the girl from abusive parents
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="https://worldbuilding.stackexchange.com/questions/99403/are-underground-shelters-defensible" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are underground shelters defensible?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/99981/accidentally-addressed-professor-as-mrs-instead-of-ms" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Accidentally addressed professor as Mrs instead of Ms
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-gamedev" title="Game Development Stack Exchange"></div><a href="https://gamedev.stackexchange.com/questions/151813/how-do-you-decide-on-the-size-of-a-tech-tree" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:53 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do you decide on the size of a tech tree?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="https://codereview.stackexchange.com/questions/182146/second-project-euler-solution" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Second project Euler solution
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-outdoors" title="The Great Outdoors Stack Exchange"></div><a href="https://outdoors.stackexchange.com/questions/17861/could-a-tick-make-several-test-bites-in-a-circle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:395 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Could a tick make several test bites in a circle?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/7639/how-to-approach-flatmate-and-relative-to-stop-talking-about-a-topic-that-makes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to approach flatmate (and relative) to stop talking about a topic that makes me uncomfortable
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="https://dba.stackexchange.com/questions/192542/find-out-date-and-or-number-of-error-logs-xp-readerrorlog" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Find out date and or number of error logs xp_readerrorlog
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="https://cooking.stackexchange.com/questions/86152/what-is-this-one-handed-tool-with-five-dull-steel-blades-called" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is this one-handed tool with five dull steel &quot;blades&quot; called?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-politics" title="Politics Stack Exchange"></div><a href="https://politics.stackexchange.com/questions/26638/is-there-any-record-of-trickle-down-economics-improving-the-economy" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there any record of Trickle Down Economics improving the economy?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/111231/will-i-take-acid-damage-if-i-used-ring-of-water-walking-to-walk-across-a-pool-of" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Will I take acid damage if I used Ring of Water Walking to walk across a pool of acid?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/111215/how-can-i-narrate-charm-fear-rage-etc-effects-in-a-liberating-manner" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I narrate Charm/Fear/Rage/etc effects in a liberating manner?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/7661/how-can-i-express-my-concerns-about-my-underage-brother-drinking-alcoholic-bever" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I express my concerns about my underage brother drinking alcoholic beverages to him without sounding like I&#39;m his mom?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="https://tex.stackexchange.com/questions/404933/how-to-make-a-linear-graph" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to make a linear graph?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="https://security.stackexchange.com/questions/174867/how-does-duckduckgo-know-my-native-language-even-though-i-am-using-a-vpn-in-a-co" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does DuckDuckGo know my native language even though I am using a VPN in a country with a different language?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2554162/is-every-commutative-ring-contained-in-a-field" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is every commutative ring contained in a field?
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="https://electronics.stackexchange.com/questions/343623/why-do-i-need-a-ground-when-simulating-a-circuit-i-thought-voltage-was-relative" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do I need a ground when simulating a circuit? I thought voltage was relative between two nodes!
+                </a>
+
+            </li>
+            <li class="dno js-hidden">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="https://superuser.com/questions/1274329/how-do-antivirus-scanners-conflict-with-each-other" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do antivirus scanners conflict with each other?
+                </a>
+
+            </li>
+    </ul>
+
+        <a href="#" 
+           class="show-more js-show-more js-gps-track" 
+           data-gps-track="posts_hot_network.click({ item_type:3, location:11 })">
+            more hot questions
+        </a>
+</div>
+        </div>
+    <div id="feed-link">
+    <div id="feed-link-text">
+        <a href="/feeds/question/7106" title="feed of this question and its answers">
+            <svg aria-hidden="true" class="svg-icon iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0 1 10 10h2.5zm-5 0A7.5 7.5 0 0 0 3 7.5V10a5 5 0 0 1 5 5h2.5zm-5 0A2.5 2.5 0 0 0 3 12.5V15h2.5z"/></svg>
+            question feed
+        </a>
+    </div>
+</div>
+    </div>
+<script>
+StackExchange.ready(function(){$.get('/posts/7106/ivc/8ef3');});
+</script>
+<noscript>
+    <div><img src="/posts/7106/ivc/8ef3" class="dno" alt="" width="0" height="0"></div>
+</noscript></div>
+
+
+        </div>
+    </div>
+
+    <footer id="footer" class="s-footer js-footer" role="contentinfo">
+        <div class="-container">
+            <div class="g-row">
+                
+                    <nav class="-nav js-category _visible" data-name="default">
+                        <h5 class="-title"><a href="/">Network Engineering</a></h5>
+                        <ul class="-list">
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="/tour">Tour</a></li>
+                                <li class="-item"><a href="/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com?tab=site&host=networkengineering.stackexchange.com">Chat</a></li>
+                            <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="/contact">Contact</a></li>
+                                <li class="-item g-col"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://networkengineering.meta.stackexchange.com">Feedback</a></li>
+                                                            <li class="-item"><a onclick='StackExchange.switchMobile("on")' class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </nav>
+                <nav class="-nav js-category _visible" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                                                    <li class="-item"><a href="https://stackoverflow.com" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&utm_medium=referral&utm_campaign=brand-activation" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow Business</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Developer Jobs</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <div class="-network g-row">
+                    <a href="#" class="-back-trigger js-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"/></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="#" class="-link _expandable js-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <nav class="-nav js-category" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine&#174; CMS">ExpressionEngine&#174; Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Portugu&#234;s</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores y profesionales de la inform&#225;tica">Stack Overflow en espa&#241;ol</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (26)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (16)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (32)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></nav><nav class="-nav js-category" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </nav>
+    <nav class="-nav js-category" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="https://area51.stackexchange.com" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </nav>
+                <div class="-copyright g-row jc-end">
+                    <div class="g-column jc-sp-between">
+                        <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog?blb=1">Blog</a></li>
+                            <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                            <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                            <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                        </ul>
+
+                        <div>
+                            <p>
+                                site design / logo &#169; 2017 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license" class="-link">cc by-sa 3.0</a>
+                                with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license" class="-link">attribution required</a>.
+                                <span id="svnrev">rev&nbsp;2017.12.6.28055</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+    </footer>
+
+    <noscript>
+        <div id="noscript-warning">Network Engineering Stack Exchange works best with JavaScript enabled
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-5620270-24', {'cookieDomain': 'stackexchange.com'});
+                ga('set', 'dimension2', '|ipv4|subnet|');
+                ga('send', 'pageview');
+                    
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    </body>
+</html>

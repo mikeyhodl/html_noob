@@ -1,0 +1,4264 @@
+<Skin name="Hercules RMX2 BLACK" version="8" width="1600" height="900" nbdecks="2" comment="Hercules RMX2 - Black version" author="DJDaD - Atomix Productions" preview="skinpreview.png" >
+<copyright>- (c)2014 - DJDad -</copyright>
+
+<customicons x="249" y="2524" iconsize="64" nb="144" nbx="16" />
+<font name="Arial" />
+<tooltip font="Arial" weight="bold" size="15" color="black" back="#C4B573" shortcut="#808080"></tooltip>
+
+************************************************************
+  Top Part (close open config etc) 
+************************************************************
+<group name="defines" >
+	<define class="smallpad" >
+		<size  width="58" height="24"/>
+		<off x="127" y="951"/>
+		<on x="127" y="981"/>
+	</define>
+	<define class="largepad" >
+		<size  width="110" height="24"/>
+		<off x="6" y="951"/>
+		<on x="6" y="981"/>
+	</define>
+	<define class="panelbar" >
+		<size  width="238" height="14"/>
+		<off x="4" y="931"/>
+		<on x="4" y="911"/>
+	</define>
+	<define class="fxslider" >
+		<size  width="46" height="8"/>
+		<off x="198" y="951"/>
+		<on x="198" y="961"/>
+		<fader>
+			<pos x="20" y="1462" width="1" height="8" />
+		</fader>
+	</define>
+	<define class="samplerpos" type="linear" orientation="horizontal" >
+		<size  width="108" height="8"/>
+		<off x="7" y="1019"/>
+		<on x="7" y="1009"/>
+	</define>
+	<define class="samplervol" orientation="horizontal" >
+		<size width="52" height="14"/>
+		<off x="125" y="1011"/>
+		<on x="125" y="1031"/>
+	</define>
+	<define class="mixerbutton" >
+		<size  width="34" height="22"/>
+		<text font="arial" size="13" align="center" color="#9D9E9E" weight="bold"/>
+		<textselected font="arial" size="13" align="center" color="white" weight="bold"/>
+		<off x="339" y="912"/>
+		<on x="339" y="942"/>
+	</define>
+	<define class="smallbutton" >
+		<size  width="34" height="22"/>
+		<off x="339" y="912"/>
+		<on x="339" y="942"/>
+	</define>
+	<define class="optionsbutton" >
+		<size  width="56" height="13"/>
+		<off x="203" y="978"/>
+		<on x="273" y="978"/>
+		<down x="273" y="978"/>
+		<text font="arial" size="13" align="center" color="#9D9E9E" weight="bold"/>
+		<textselected font="arial" size="13" align="center" color="black" weight="bold"/>
+		<textdown font="arial" size="13" align="center" color="black" weight="bold"/>
+	</define>	
+	<define class="roundknob" orientation="round">
+		<size width="47" height="47"/>
+		<fader>
+			<pos x="20" y="1462" nb="31" smooth="true"/>
+		</fader>	
+	</define>
+	<define class="roundknobfull" orientation="round">
+		<size width="47" height="47"/>
+		<fader>
+			<pos x="20" y="1520" nb="31" smooth="true"/>
+		</fader>	
+	</define>
+	<define class="volumeslider" action="level" orientation="vertical" dblclick="reset" rightclick="temporary">
+		<size width="36" height="96"/>
+		<off x="258" y="1055"/>
+		<on x="318" y="1055"/>
+		<fader>
+			<size width="36" height="18"/>
+			<pos x="341" y="1839"/>
+		</fader>
+	</define>
+	<define class="vumeter" source="get level" type="linear" orientation="vertical" direction="up">
+		<size width="7" height="94"/>
+		<off x="382" y="1051"/>
+		<on x="402" y="1051"/>	
+	</define>
+	<define class="lock" >
+			<size width="17" height="23"/>
+			<off x="211" y="997"/>
+			<on x="211" y="1027"/>
+	</define>	
+	<define class="eyeicon" >
+		<size  width="18" height="12"/>
+		<off x="434" y="1053"/>
+		<on x="434" y="1053"/>
+	</define>
+	<define class="infoicon" >
+		<size  width="11" height="17"/>
+		<off x="434" y="1101"/>
+		<on x="454" y="1101"/>
+		<over x="454" y="1101"/>
+		<down x="454" y="1101"/>
+	</define>
+	<define class="optionsicon" >
+		<size  width="14" height="14"/>
+		<off x="432" y="1074"/>
+		<on x="452" y="1074"/>
+		<over x="452" y="1074"/>
+		<down x="452" y="1074"/>
+	</define>
+	<define class="smartbuttonred" >
+		<size  width="15" height="15"/>
+		<off x="312" y="1356"/>
+		<on x="272" y="1356"/>
+
+	</define>
+	<define class="smartbutton" >
+		<size  width="15" height="15"/>
+		<off x="79" y="1033"/>
+		<on x="39" y="1033"/>
+		<down x="39" y="1033"/>
+	</define>
+</group>
+
+<group name="toppbar" >
+	<grabzone>
+		<size width="1600" height="29"/>
+		<pos x="0" y="0"/>
+	</grabzone>
+
+	<logo  >
+		<size width="80" height="20"/>
+		<pos x="22" y="3"/>
+	</logo>
+
+
+	<button action="settings">
+		<pos x="1399" y="4"/>
+		<size  width="44" height="21"/>
+		<up x="+0" y="+0"/>
+		<over x="+0" y="+900"/>	
+		<down x="+0" y="+900"/>
+	</button>
+
+	 --- Minimize ---
+	 <button  action="minimize">
+		<pos x="1489" y="3"/>
+		<size  width="27" height="21"/>
+		<up x="+0" y="+0"/>
+		<over x="+0" y="+900"/>	
+	</button>
+	--- Maximize ---
+	<button action="maximize" rightclick="maximize off">
+		<pos x="1520" y="3" />
+		<size width="27" height="21"/>
+		<up x="+0" y="+0"/>
+		<over x="+0" y="+900"/>
+	</button>
+	--- Close ---
+	<button action="close">
+		<pos x="1550" y="3"/>
+		<size width="27" height="21"/>
+		<up x="+0" y="+0"/>
+		<over x="+0" y="+900"/>
+	</button>
+
+
+	---time---
+	<textzone>
+		<pos x="1259" y="7" />
+		<size width="97" height="18"/>
+		<text font="Arial" size="18" align="center" weight="bold" color="#d1d3d4" format="%fullhour"/>
+		<text2 font="Arial" size="18" align="center" weight="bold" color="#d1d3d4" format="%hour12"/>
+	</textzone>
+	
+	<group name="recrd" x="910" y="1">
+		<button action="record" rightclick="record_config" >
+			<Tooltip>Record\nRight-click to open Record Options</Tooltip>
+			<pos x="+0" y="+4" />
+			<size width="34" height="21"/>
+			<off x="537" y="1080"/>
+			<on x="497" y="1080"/>
+		</button>
+		<textzone visibility="record">
+			<pos x="+40" y="+7" />
+			<size width="250" height="14"/>
+			<text font="Arial" size="14" align="left" color="#d1d3d4" format="`get_record_message` / `get_record_time` / `get_record_size`"/>
+		</textzone>
+	</group>
+	
+	<group name="cpu" x="160" y="9" >
+		<textzone>
+			<pos x="+0" y="+0" />
+			<size width="30" height="14"/>
+			<text font="Arial" size="14" align="right" color="#d1d3d4" format="CPU"/>
+		</textzone>
+		<visual type="linear" source="get cpu" orientation="horizontal">
+			<pos x="+35" y="+0" />
+			<size width="64" height="14"/>
+			<off x="444" y="910"/>
+			<on x="374" y="910"/>	
+		</visual>
+	</group>
+	
+	<group name="sandbx" x="320" y="3">
+		<visual >
+			<Tooltip></Tooltip>
+			<pos x="+0" y="+0" />
+			<size width="200" height="25"/>
+			<off x="38" y="1354"/>
+		</visual>
+		<songpos deck="sandbox">
+			<pos x="+2" y="+2" />
+			<size width="196" height="23"/>
+		</songpos>
+		<button action="sandbox" class="mixerbutton" >
+			<Tooltip>Sandbox</Tooltip>
+			<pos x="+210" y="+2" />
+			<text format="SB" />
+			<textselected format="SB" />
+		</button>
+	</group>
+
+	--- Bar beats ----
+	 <button action="deck 1 goto_bar 1">
+		<pos x="731" y="7" />
+		<size width="32" height="10"/>
+		<up x="+0" y="+0"/>
+		<selected x="+0" y="+900"/>
+	</button>
+	 <button action="deck 1 goto_bar 2">
+		<pos x="766" y="7" />
+		<size width="32" height="10"/>
+		<up x="+0" y="+0"/>
+		<selected x="+0" y="+900"/>
+	</button>
+	 <button action="deck 1 goto_bar 3">
+		<pos x="802" y="7" />
+		<size width="32" height="10"/>
+		<up x="+0" y="+0"/>
+		<selected x="+0" y="+900"/>
+	</button>
+	 <button action="deck 1 goto_bar 4">
+		<pos x="838" y="7" />
+		<size width="32" height="10"/>
+		<up x="+0" y="+0"/>
+		<selected x="+0" y="+900"/>
+	</button>
+
+	 <button action="deck 2 goto_bar 1">
+		<pos x="731" y="19" />
+		<size width="32" height="10"/>
+		<up x="+0" y="+0"/>
+		<selected x="+0" y="+900"/>
+	</button>
+	 <button action="deck 2 goto_bar 2">
+		<pos x="766" y="19" />
+		<size width="32" height="10"/>
+		<up x="+0" y="+0"/>
+		<selected x="+0" y="+900"/>
+	</button>
+	 <button action="deck 2 goto_bar 3">
+		<pos x="802" y="19" />
+		<size width="32" height="10"/>
+		<up x="+0" y="+0"/>
+		<selected x="+0" y="+900"/>
+	</button>
+	 <button action="deck 2 goto_bar 4">
+		<pos x="838" y="19" />
+		<size width="32" height="10"/>
+		<up x="+0" y="+0"/>
+		<selected x="+0" y="+900"/>
+	</button>
+
+	<button action="toggle '$browsersize'" class="smallbutton" >
+		<Tooltip>Browser Zoom Mode</Tooltip>
+		<pos x="638" y="5" />
+		<icon x="506" y="1053" width="18" height="17" />
+	</button>
+	
+	<panel name="amp" visibility="var '$browsersize' 0">
+	 <button action="mic">
+		<pos x="39" y="34" />
+		<size width="28" height="18"/>
+		<up x="+0" y="+0"/>
+		<selected x="+0" y="+900"/>
+		<down x="+0" y="+900"/>
+	</button>
+	<slider class="roundknobfull" action="mic_volume" >	<pos x="29" y="52"/></slider>
+	<slider class="roundknobfull" action="master_volume" dblclick="master_volume 100%" ><pos x="96" y="52"/></slider>
+	<slider class="roundknobfull" action="headphone_volume" dblclick="headphone_volume 100%" ><pos x="1525" y="52"/></slider>
+	<slider class="roundknob" action="headphone_mix" dblclick="headphone_mix 0%" ><pos x="1457" y="52"/></slider>
+	<visual class="smartbuttonred" type="transparent" source="get_limiter" >
+		<Tooltip>Limiter</tooltip>
+		<pos x="114" y="25"/>
+	</visual>
+	</panel>
+</group>
+
+
+<panel name="smallbrowser" visibility="var '$browsersize' 0">
+	<group name="rhtyhms" >
+		******** RHYTHM ************************************************************
+		<slider action="zoom & zoom_scratch" orientation="vertical" dblclick="reset" rightclick="temporary" direction="down">
+			<size width="6" height="55"/>
+			<pos x="171" y="51"/>
+			<up x="+0" y="+0"/>
+			<fader>
+				<size width="4" height="6"/>
+				<pos x="519" y="955"/>
+			</fader>
+		</slider>
+		<button action="skin_panelgroup 'rhtythms' +1" class="smallbutton" >
+			<Tooltip>Cycle through the available\nWaveform Views</Tooltip>
+			<pos x="1415" y="55" />
+			<icon x="506" y="1016" width="18" height="17" />
+		</button>
+		<button action="toggle '@$showgrids'" class="smallbutton" >
+			<Tooltip>Show Extra Grid Lines</Tooltip>
+			<pos x="1415" y="87" />
+			<icon x="557" y="1015" width="18" height="17" />
+		</button>
+
+
+		<panel name="overlap" group="rhtythms" visible="yes">
+			<rhythmzone center="799" fade="100" >
+				<pos x="190" y="36" />
+				<size width="1219" height="76"/>
+				<colors
+					deck1_active="#75B94E" deck1="#4D7E2E"
+					deck2_active="#F09B18" deck2="#C86C1D"
+				/>
+				<rhythm y="+0" height="60"/>
+				<grid height="5" width="5" maxwidth="11">
+					<pos y1="100" y2="105" />
+				</grid>
+				<cue y="+0" height="15">
+					<mask x="606" y="915" width="10" height="10"/>
+					<text font="Arial" size="14" dx="9" dy="1"/>
+				 </cue>
+				  <overlay>
+					<size width="1219" height="76"/>
+					<pos x="189" y="36"/>
+					<background x="190" y="2431"/>
+				  </overlay>
+			 </rhythmzone>
+		</panel>
+		<panel name="miror" group="rhtythms" visible="no">
+			<rhythmzone center="799" fade="100" mirror="true" >
+				<pos x="190" y="36" />
+				<size width="1219" height="76"/>
+				<colors
+					deck1_active="#75B94E" deck1="#4D7E2E"
+					deck2_active="#F09B18" deck2="#C86C1D"
+				/>
+				<rhythm y="+0" height="60"/>
+				<grid height="5" width="5" maxwidth="11">
+					<pos y1="100" y2="105" />
+				</grid>
+				<cue y="+0" height="15">
+					<mask x="606" y="915" width="10" height="10"/>
+					<text font="Arial" size="14" dx="9" dy="1"/>
+				 </cue>
+				  <overlay>
+					<size width="1219" height="76"/>
+					<pos x="189" y="36"/>
+					<background x="190" y="2431"/>
+				  </overlay>
+			</rhythmzone>
+		
+		
+		</panel>
+		<panel name="upside" group="rhtythms" visible="no">
+			<rhythmzone center="799" fade="100" mirror="false" upsidedown="true" >
+				<pos x="190" y="36"/>
+				<size  width="1219" height="76"/>
+				<colors
+					deck1_active="#75B94E" deck1="#4D7E2E"
+					deck2_active="#F09B18" deck2="#C86C1D"
+				/>
+				<rhythm y="+0" height="60"/>
+				<grid height="5" width="5" maxwidth="11">
+					<pos y1="100" y2="105" />
+				</grid>
+				<cue y="+45" height="15">
+					<mask x="649" y="955" width="10" height="15"/>
+					<text font="Arial" size="14" dx="9" dy="1"/>
+				 </cue>
+				  <overlay>
+					<size width="1219" height="76"/>
+					<pos x="189" y="36"/>
+					<background x="190" y="2431"/>
+				  </overlay>
+			</rhythmzone>
+		</panel>	
+		<panel name="upside2" group="rhtythms" visible="no">
+			<rhythmzone center="799" fade="100"  >
+				<pos x="190" y="36"/>
+				<size  width="1219" height="76"/>
+				<colors
+					deck1_active="#75B94E" deck1="#4D7E2E"
+				/>
+				<rhythm y="+0" height="30"/>
+				<grid height="5" width="5" maxwidth="11">
+					<pos y1="100" />
+				</grid>
+				<cue y="+0" height="15">
+					<mask x="606" y="915" width="10" height="10"/>
+					<text font="Arial" size="14" dx="9" dy="1"/>
+				 </cue>
+				  <overlay>
+					<size width="1219" height="76"/>
+					<pos x="189" y="36"/>
+					<background x="190" y="2431"/>
+				  </overlay>
+			</rhythmzone>
+			<rhythmzone center="799" fade="100" upsidedown="true" >
+				<pos x="190" y="36"/>
+				<size  width="1219" height="76"/>
+				<colors
+					deck2_active="#F09B18" deck2="#C86C1D"
+				/>
+				<rhythm y="+30" height="30"/>
+				<grid height="5" width="5" maxwidth="11">
+					<pos y2="105" />
+				</grid>
+				<cue y="+45" height="15">
+					<mask x="649" y="955" width="10" height="15"/>
+					<text font="Arial" size="14" dx="9" dy="1"/>
+				 </cue>
+				  <overlay>
+					<size width="1219" height="76"/>
+					<pos x="189" y="36"/>
+					<background x="190" y="2431"/>
+				  </overlay>
+			</rhythmzone>
+		</panel>
+		<panel name="scratch2" group="rhtythms" visible="no">
+			<visual type="color" source="constant '#2B4F26'" >
+				<Tooltip></Tooltip>
+				<pos x="190" y="36"/>
+				<size  width="1219" height="38"/>	
+			</visual>
+			<visual type="color" source="constant '#54401C'" >
+				<Tooltip></Tooltip>
+				<pos x="190" y="36+38"/>
+				<size  width="1219" height="38"/>	
+			</visual>
+			<scratchwave orientation="horizontal" color="#4D7E2E" deck="left" >
+				<pos x="190" y="37"/>
+				<size  width="1219" height="36"/>
+				 <overlay><pos x="+0" y="+0" width="1219" height="36"/><background x="190" y="2422"/></overlay>
+			 </scratchwave>
+			 <scratchwave orientation="horizontal" color="#C86C1D" deck="right" >
+				<pos x="190" y="37+38"/>
+				<size  width="1219" height="36"/>
+				 <overlay><pos x="+0" y="+0" width="1219" height="36"/><background x="190" y="2422"/></overlay>
+			 </scratchwave>
+		</panel>	
+		
+
+		<panel name="extragridlines" group="grids" visible="var '@$showgrids' 1 ? not skin_panel 'scratch2' on" >
+			<rhythmzone center="799" fade="100" >
+				<pos x="190" y="36" />
+				<size width="1219" height="76"/>
+				<colors
+					deck1_active="#358703" deck1="#358703"
+					deck2_active="#AB6B03" deck2="#AB6B03"
+				/>
+				<rhythm y="+0" height="0"/>
+				<grid height="73" width="1" maxwidth="1">
+					<pos y1="+1" y2="+1" />
+				</grid>
+			 </rhythmzone>
+
+		</panel>
+		<panel name="extragridlines2" group="grids" visible="var '@$showgrids' 1 ? skin_panel 'scratch2' on" >
+			<rhythmzone center="800" fade="100" >
+				<pos x="190" y="36" />
+				<size width="1219" height="38"/>
+				<colors
+					deck1_active="white" deck1="white"
+				/>
+				<rhythm y="+0" height="0"/>
+				<grid height="38" width="1" maxwidth="1">
+					<pos y1="+1" y2="+1" />
+				</grid>
+				<cue y="+0" height="15">
+					<mask x="606" y="915" width="10" height="10"/>
+					<text font="Arial" size="14" dx="9" dy="1"/>
+				 </cue>
+			 </rhythmzone>
+			<rhythmzone center="800" fade="100" >
+				<pos x="190" y="36+38" />
+				<size width="1219" height="38"/>
+				<colors
+					deck2_active="white" deck2="white"
+				/>
+				<rhythm y="+0" height="0"/>
+				<grid height="38" width="1" maxwidth="1">
+					<pos y1="+1" y2="+1" />
+				</grid>
+				<cue y="+0" height="15">
+					<mask x="606" y="915" width="10" height="10"/>
+					<text font="Arial" size="14" dx="9" dy="1"/>
+				 </cue>
+			 </rhythmzone>
+		</panel>
+
+
+
+
+
+	</group>
+
+	********************************************************************************************************************
+	DECK 1 
+	*********************************************************************************************************************
+	<deck deck="left">
+
+		<group name="leftinfo" x="28" y="130">
+			<songpos colorPlayed="#23c034" colorBass="#007a19" colorMed="#23c034" colorHigh="#7fe997" >
+				<pos x="+2" y="+63" />
+				<size width="559" height="31"/>
+				<cues>
+					<size width="2" height="31"/>
+					<up x="521" y="941"/>
+					<over x="551" y="941"/>
+				</cues>
+			 </songpos>
+			 <visual type="color" source="constant 'black'" visibility="var '@$showcues' 2">
+				<Tooltip></Tooltip>
+				<pos x="+2" y="+63+18" />
+				<size width="559" height="13"/>
+			</visual>
+			 <visual type="linear" orientation="horizontal" direction="right" source="song_pos" visibility="var '@$showcues' 2">
+				<Tooltip></Tooltip>
+				<pos x="+2" y="+63+19" />
+				<size width="559" height="2"/>
+				<off x="875" y="1237"/>
+				<on x="875" y="1247"/>
+			</visual>
+			
+			<panel name="cuespos" x="28" y="130" visibility="not var '@$showcues' 0" >		 
+				<slider action="cue_pos 1" visibility="automix ? false : hot_cue 1">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="270" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 2" visibility="automix ? false : hot_cue 2">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="290" y="1011"/>
+						</fader>
+				</slider>
+					<slider action="cue_pos 3" visibility="automix ? false : hot_cue 3">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="310" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 4" visibility="automix ? false : hot_cue 4">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="330" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 5" visibility="automix ? false : hot_cue 5">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="350" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 6" visibility="automix ? false : hot_cue 6">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="370" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 7" visibility="automix ? false : hot_cue 7">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="390" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 8" visibility="automix ? false : hot_cue 8">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="410" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 9" visibility="automix ? false : hot_cue 9">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="430" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 10" visibility="automix ? false : hot_cue 10">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="450" y="1011"/>
+						</fader>
+				</slider>
+			</panel>
+				
+				
+			<dropzone >
+				<pos x="+0" y="-4" />
+				<size width="560" height="370"/>
+			</dropzone>
+
+			<panel name="TextsLeft" visibility="not var '@$showcover' 1">
+				<textzone >
+					<pos x="+3" y="+0" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="ARTIST" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3" y="+23" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="TITLE" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3" y="+48" />
+					<size width="47" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="COMMENT" scroll="no"/>
+				</textzone>
+				
+				<textzone >
+					<pos x="+40" y="-1" />
+					<size width="377" height="22"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="22" color="#75B94E"  format="%Author" scroll="no"/>
+					<text2 font="arial" size="22" color="#75B94E" format="%Author" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+40" y="+23" />
+					<size width="377" height="18"/>
+					<up x="+0" y="+0"/>
+						<text font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="no"/>
+					<text2 font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+54" y="+45" />
+					<size width="172" height="18"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="15" color="#d1d3d4"  align="left" format="`get loaded_song 'comment'`" scroll="yes"/>
+				 </textzone>
+			</panel>
+			<panel name="TextsLeftCover" visibility="var '@$showcover' 1">
+				<cover>
+					<pos x="+0" y="-3" />
+					<size width="65" height="65"/>		
+				</cover>
+				<textzone >
+					<pos x="+3+65" y="+0" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="ARTIST" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3+65" y="+23" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="TITLE" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3+65" y="+48" />
+					<size width="47" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="COMMENT" scroll="no"/>
+				</textzone>
+				
+				<textzone >
+					<pos x="+40+65" y="-1" />
+					<size width="377-65" height="22"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="22" color="#75B94E"  format="%Author" scroll="no"/>
+					<text2 font="arial" size="22" color="#75B94E" format="%Author" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+40+65" y="+23" />
+					<size width="377-65" height="18"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="no"/>
+					<text2 font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+54+65" y="+45" />
+					<size width="172-65" height="18"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="15" color="#d1d3d4"  align="left" format="`get loaded_song 'comment'`" scroll="yes"/>
+				 </textzone>
+			</panel>
+
+			<group name="othertexts" >
+				<textzone >
+					<pos x="+420" y="+8" />
+					<size width="45" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="REMAIN" scroll="no"/>
+				</textzone>	
+				<textzone >
+					<pos x="+420" y="+35" />
+					<size width="45" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="ELAPSED" scroll="no"/>
+				</textzone>	
+				<textzone >
+					<pos x="+467" y="+31" />
+					<size width="90" height="22"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="24" color="#75B94E" align="left" format="%Pspent"/>
+				</textzone>
+				<button action="bs" query="songpos_remain 30000ms ? blink 800ms : on">
+					<Tooltip></Tooltip>
+					<pos x="+467" y="+3" />
+					<size width="90" height="22"/>
+					<text font="arial" size="24" color="#9D9E9E" align="left" format="%Pleft"/>
+					<textselected font="arial" size="24" color="#FFFFFF" align="left" format="%Pleft"/>
+				</button> 
+				
+				<textzone >
+					<pos x="+231" y="+48" />
+					<size width="23" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="KEY" scroll="no"/>
+				</textzone>	
+				<textzone >
+					<pos x="+318" y="+48" />
+					<size width="26" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="GAIN" scroll="no"/>
+				</textzone>	
+				
+				<textzone >
+					<pos x="+254" y="+45" />
+					<size width="60" height="16"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="16" color="#FFFFFF" align="center" format="%Pkey/%Pcamelot"/>
+				</textzone>
+				<textzone >
+					<pos x="+344" y="+45" />
+					<size width="65" height="16"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="16" color="#FFFFFF" align="left" format="%Plevel db"/>
+				</textzone>
+				
+				<button action="file_info" class="infoicon">
+					<pos x="+550" y="+0" />
+				</button>	
+				<button action="setting 'hideSonginfo'" class="eyeicon">
+					<pos x="+547" y="+22" />
+				</button>
+				 <menu class="optionsicon">
+					<tooltip>DeckOptions</tooltip>
+					<pos x="+547" y="+40" />
+					<submenu text="Track Cover">
+						<item text="No Cover" action="set '@$showcover' 0" check="var '@$showcover' 0"/>
+						<item text="Cover on Deck" action="set '@$showcover' 1" check="var '@$showcover' 1"/>
+						<item text="Cover on Jogwheel" action="set '@$showcover' 2" check="var '@$showcover' 2"/>
+					</submenu>
+					<submenu text="Track Progress bar Style">
+						<item text="Default" action="set '@$showcues' 0" check="var '@$showcues' 0"/>	
+						<item text="Cue Markers" action="set '@$showcues' 1" check="var '@$showcues' 1"/>	
+						<item text="Pioneer style" action="set '@$showcues' 2" check="var '@$showcues' 2"/>	
+					</submenu>
+					<submenu text="Track Progress bar Color">
+						<item text="Monochrome" action="setting 'ColoredWaveforms' 'monochrome'" check="setting 'ColoredWaveforms' 'monochrome'"/>	
+						<item text="Neutral" action="setting 'ColoredWaveforms' 'neutral'" check="setting 'ColoredWaveforms' 'neutral'"/>	
+						<item text="Infra-red" action="setting 'ColoredWaveforms' 'infra-red'" check="setting 'ColoredWaveforms' 'infra-red'"/>	
+						 <item text="Per-deck" action="setting 'ColoredWaveforms' 'per-deck'" check="setting 'ColoredWaveforms' 'per-deck'"/>	
+						<item text="Ultra-blue" action="setting 'ColoredWaveforms' 'ultra-blue'" check="setting 'ColoredWaveforms' 'ultra-blue'"/>	
+					</submenu>
+				</menu>
+			</group>
+		</group>
+			
+		<group name="lefttempoinfo" x="268" y="229">		
+			<textzone >
+				<pos x="+25" y="+0" />
+				<size width="62" height="22"/>
+				<up x="+0" y="+0"/>
+				<text font="arial" size="22" color="#75B94E" align="right"  format="%Pbpmex"/>
+			</textzone>
+			<button action="edit_bpm">
+				<pos x="+0" y="+7" />
+				<size width="30" height="14"/>
+				<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="BPM" scroll="no"/>
+				<textover font="arial" size="12" align="left" color="white"  weight="bold" format="BPM" scroll="no"/>
+			</button>	
+		
+			<textzone >
+				<pos x="+0" y="+25" />
+				<size width="30" height="14"/>
+				<up x="+0" y="+0"/>
+				<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="PITCH" scroll="no"/>
+			</textzone>	
+			<textzone >
+				<pos x="+29" y="+20" />
+				<size width="57" height="20"/>
+				<up x="+0" y="+0"/>
+				<text font="arial" size="18" color="#FFFFFF" align="right" format="%Ppitch"/>
+			</textzone>
+			<textzone >
+					<pos x="+0" y="+41" />
+					<size width="30" height="12"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="10" align="left" color="#9D9E9E"  weight="bold" format="RANGE" scroll="no"/>
+				</textzone>	
+			<button action="pitch_range" value="+1" rightclick="-2">
+				<pos x="+33" y="+40" />
+				<size width="50" height="12"/>
+				<text dx="0" dy="0" width="43" font="ARIAL" size="14" color="white" align="center" format="%pitchrange%%"/>
+				<up x="+0" y="+0"/>
+			</button>
+		</group>
+
+			<group name="Jogleft" x="360" y="250">
+				<visual >
+					<Tooltip></Tooltip>
+					<pos x="+0" y="+0" />
+					<size width="202" height="202"/>
+					<off x="305" y="1907"/>
+				</visual>
+				<cover rotate="yes" visibility="var '@$showcover' 2">
+					<pos x="+30" y="+30" />
+					<size width="142" height="142"/>			
+				</cover>
+				<visual visibility="var '@$showcover' 2">
+					<Tooltip></Tooltip>
+					<pos x="+0" y="+0" />
+					<size width="202" height="202"/>
+					<off x="555" y="2127"/>
+				</visual>			
+				<visual visibility="vinyl_mode">
+					<Tooltip></Tooltip>
+					<pos x="+0" y="+0" />
+					<size width="202" height="202"/>
+					<off x="1305" y="2147"/>
+				</visual>
+				<visual type="rotation" source="get rotation" >
+					<Tooltip></Tooltip>
+					<pos x="+0" y="+0" />
+					<size width="202" height="202"/>
+					<on x="55" y="1907"/>
+				</visual>
+				<scratch>
+					<pos x="+0" y="+0" />
+					<size width="202" height="202"/>
+					<mousemask x="555" y="1907"/>
+				</scratch>
+				<visual visibility="touchwheel_touch" >
+					<Tooltip></Tooltip>
+					<pos x="+0" y="+0" />
+					<size width="202" height="202"/>
+					<off x="1055" y="1907"/>
+				</visual>
+			</group>
+
+		
+		<group name="SubControls" x="360" y="460" >
+
+			<button class="optionsbutton" action="beat_tap" >
+				<tooltip>Manual Beat Tap</tooltip>
+				<pos x="+0" y="+0" />
+				<text format="TAP"/>
+				<textselected format="TAP"/>
+				<textdown format="TAP"/>
+			</button>
+			<button class="optionsbutton" action="smart_cue" >
+				<tooltip>Smart Cue</tooltip>
+				<pos x="+64" y="+0" />
+				<text format="SMART"/>
+				<textselected format="SMART"/>
+				<textdown format="SMART"/>
+			</button>
+			<button class="optionsbutton" action="smart_play" >
+				<tooltip>Smart Play</tooltip>
+				<pos x="+130" y="+0" />
+				<text format="SMART"/>
+				<textselected format="SMART"/>
+				<textdown format="SMART"/>
+			</button>
+		</group>
+		<group name="seek_select" >
+			<button action="seek -4" >
+				<tooltip>Seek Backward button</tooltip>
+				<pos x="518" y="238" />
+				<size width="36" height="22"/>
+				<off x="386" y="943"/>
+				<on x="386" y="973"/>
+			</button>
+			<button action="seek +4" >
+				<tooltip>Seek Forward button</tooltip>
+				<pos x="556" y="238" />
+				<size width="36" height="22"/>
+				<off x="423" y="943"/>
+				<on x="423" y="973"/>
+			</button>
+
+			<button action="select" >
+				<pos x="365" y="228" />
+				<size width="31" height="32"/>
+				<text font="arial" size="32" weight="bold" color="#9D9E9E" format="A"/>
+				<textselected font="arial" size="32" weight="bold" color="#75B94E" format="A"/>
+			</button>
+		</group>
+		
+		<group name="Pitchcontrol" >
+			<slider action="pitch" orientation="vertical" direction="down" dblclick="pitch 100%" rightclick="temporary" >
+				<pos x="285" y="294" />
+				<size width="42" height="121"/>
+				<off x="20" y="1186"/>
+				<on x="100" y="1186"/>
+				<fader>
+					<size width="39" height="18"/>
+					<pos x="276" y="1839"/>
+				</fader>
+				<reset value="50"/>
+			</slider>
+			<button action="pitch_bend -1% 500ms" rightclick="pitch_bend -5% 500ms">
+				<pos x="271" y="436" />
+				<size width="36" height="22"/>
+				<off x="265" y="912"/>
+				<on x="265" y="942"/>
+			</button>
+			<button action="pitch_bend +1% 500ms" rightclick="pitch_bend +5% 500ms">
+				<pos x="308" y="436" />
+				<size width="36" height="22"/>
+				<off x="303" y="912"/>
+				<on x="303" y="942"/>
+			</button>
+
+			<button action="key_lock" >
+				<pos x="328" y="294" />
+				<size width="35" height="22"/>
+				<off x="339" y="912"/>
+				<on x="339" y="942"/>
+				<text font="arial" size="12" align="center" color="#9D9E9E" weight="bold" format="KLCK"/>
+				<textselected font="arial" size="12" align="center" color="white" weight="bold" format="KLCK"/>
+			</button>
+			<button class="lock" action="pitchlock" >
+				<pos x="269" y="342" />
+			</button>
+		</group>
+
+			<group name="Controlleft" x="360" y="473">
+				<button action="play_pause" query="loaded ? play ? on : blink : off" rightclick="reverse">
+					<tooltip>Play Pause / Rightclick to play in reverse</tooltip>
+					<pos x="+65+65" y="+0" />
+					<size width="58" height="35"/>
+					<off x="148" y="1074"/>
+					<on x="148" y="1114"/>
+				</button>
+				<button action="cue_stop" query="loaded ? pause ? cue ? on : blink : off : off" rightclick="stop">
+					<tooltip>Cue Stop / Rightclick to Stop</tooltip>
+					<pos x="+65" y="+0" />
+					<size width="58" height="35"/>
+					<off x="79" y="1074"/>
+					<on x="79" y="1114"/>
+				</button>
+				<button action="sync" >
+					<tooltip>Sync button</tooltip>
+					<pos x="+0" y="+0" />
+					<size width="58" height="35"/>
+					<off x="9" y="1074"/>
+					<on x="9" y="1114"/>
+				</button>
+			</group>
+		
+
+
+			--- FX  -----
+			<panel name="FXmode" x="20" y="228" visibility="var 'padvar' 0">
+				
+				<group name="Loops" x="+0" y="+0">
+					<button action="bs" class="panelbar" >
+						<Tooltip>LOOPS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="LOOPS"/>
+					</button>
+					<button class="smallpad" action="loop_in">
+						<Tooltip>Set LOOP IN point</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="IN"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="IN"/>
+					</button>
+					<button class="smallpad" action="loop_out" query="loop ? blink : loop_out">
+						<Tooltip>Set LOOP OUT point</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="OUT"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="OUT"/>
+					</button>
+					<button class="smallpad" action="loop">
+						<Tooltip>LOOP</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="%loop"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="%loop"/>
+					</button>
+					<button class="smallpad" action="reloop" >
+						<Tooltip>Re-Loop</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="REL"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="REL"/>
+					</button>
+				</group>
+				
+				<group name="FXs" x="+0" y="+45">	
+					<button action="bs" query="on" class="panelbar" >
+						<Tooltip>EFFECTS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="white" format="EFFECTS"/>
+					</button>			
+					<button class="largepad" action="effect_active 1" rightclick="effect 1 select">
+						<Tooltip>Effect SLOT 1\nRight-click to Select an Effect</tooltip>
+						<pos x="+5" y="+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 1 & param_uppercase"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 1 & param_uppercase"/>
+					</button>
+					<button class="largepad" action="effect_active 2" rightclick="effect 2 select">
+						<Tooltip>Effect SLOT 2\nRight-click to Select an Effect</tooltip>
+						<pos x="+5+113" y="+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 2 & param_uppercase"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 2 & param_uppercase"/>
+					</button>
+					<button class="largepad" action="effect_active 3" rightclick="effect 3 select">
+						<Tooltip>Effect SLOT 3\nRight-click to Select an Effect</tooltip>
+						<pos x="+5" y="+20+66" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 3 & param_uppercase"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 3 & param_uppercase"/>
+					</button>
+					<button class="largepad" action="effect_active 4" rightclick="effect 4 select">
+						<Tooltip>Effect SLOT 4\nRight-click to Select an Effect</tooltip>
+						<pos x="+5+113" y="+20+66" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 4 & param_uppercase"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 4 & param_uppercase"/>
+					</button>
+					
+					<slider class="fxslider" action="effect_slider 1 1" orientation="horizontal">
+						<pos x="+12" y="+46"/>
+					</slider>
+					<textzone >
+						<pos x="+12" y="+44+12" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 1 1"/>
+					</textzone>
+					<slider class="fxslider" action="effect_slider 1 2" orientation="horizontal">
+						<pos x="+12+49" y="+46"/>
+					</slider>
+					<textzone >
+						<pos x="+12+49" y="+44+12" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 1 2"/>
+					</textzone>
+					
+					<slider class="fxslider" action="effect_slider 2 1" orientation="horizontal">
+						<pos x="+12+113" y="+46"/>
+					</slider>
+					<textzone >
+						<pos x="+12+113" y="+44+12" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 2 1"/>
+					</textzone>
+					<slider class="fxslider" action="effect_slider 2 2" orientation="horizontal">
+						<pos x="+12+49+113" y="+46"/>
+					</slider>
+					<textzone >
+						<pos x="+12+49+113" y="+44+12" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 2 2"/>
+					</textzone>
+					
+					<slider class="fxslider" action="effect_slider 3 1" orientation="horizontal">
+						<pos x="+12" y="+46+66"/>
+					</slider>
+					<textzone >
+						<pos x="+12" y="+44+12+66" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 3 1"/>
+					</textzone>
+					<slider class="fxslider" action="effect_slider 3 2" orientation="horizontal">
+						<pos x="+12+49" y="+46+66"/>
+					</slider>
+					<textzone >
+						<pos x="+12+49" y="+44+12+66" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 3 2"/>
+					</textzone>
+					
+					<slider class="fxslider" action="effect_slider 4 1" orientation="horizontal">
+						<pos x="+12+113" y="+46+66"/>
+					</slider>
+					<textzone >
+						<pos x="+12+113" y="+44+12+66" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 4 1"/>
+					</textzone>
+					<slider class="fxslider" action="effect_slider 4 2" orientation="horizontal">
+						<pos x="+12+49+113" y="+46+66"/>
+					</slider>
+					<textzone >
+						<pos x="+12+49+113" y="+44+12+66" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 4 2"/>
+					</textzone>
+					
+					
+				</group>
+
+				<group name="SAMPLESfx" x="+0" y="+198">
+					<button action="bs" class="panelbar" >
+						<Tooltip>SAMPLES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="SAMPLES"/>
+					</button>
+		
+					<button class="smallpad" action="sampler_pad 1" rightclick="sampler_stop 1">
+						<Tooltip>SLOT 1</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 1"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 1"/>
+					</button>
+					<button class="smallpad" action="sampler_pad 2" rightclick="sampler_stop 2">
+						<Tooltip>SLOT 2</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 2"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 2"/>
+					</button>
+					<button class="smallpad" action="sampler_pad 3" rightclick="sampler_stop 3">
+						<Tooltip>SLOT 3</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 3"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 3"/>
+					</button>
+					<button class="smallpad" action="sampler_pad 4" rightclick="sampler_stop 4">
+						<Tooltip>SLOT 4</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 4"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 4"/>
+					</button>
+				</group>
+				
+				<group name="CUES" x="+0" y="+246">
+					<button action="bs" class="panelbar" >
+						<Tooltip>HOTCUES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="HOTCUES"/>
+					</button>
+					<button class="smallpad" action="hot_cue 1" rightclick="delete_cue 1">
+						<Tooltip>HOTCUE 1</tooltip>
+						<pos x="+0" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="1"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="1"/>
+					</button>
+					<button class="smallpad" action="hot_cue 2" rightclick="delete_cue 2">
+						<Tooltip>HOTCUE 2</tooltip>
+						<pos x="+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="2"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="2"/>
+					</button>
+					<button class="smallpad" action="hot_cue 3" rightclick="delete_cue 3">
+						<Tooltip>HOTCUE 3</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="3"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="3"/>
+					</button>
+					<button class="smallpad" action="hot_cue 4" rightclick="delete_cue 4">
+						<Tooltip>HOTCUE 4</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="4"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="4"/>
+					</button>
+				</group>
+				
+			</panel>
+			
+			--- LOOPS  -----
+			<panel name="LOOPmodeL" x="20" y="228" visibility="var 'padvar' 3">
+				
+				<group name="Loops" x="+0" y="+0">
+					<button action="bs" query="on" class="panelbar" >
+						<Tooltip>LOOPS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="white" format="LOOPS"/>
+					</button>
+					<textzone>
+						<pos x="+6" y="+20" />
+						<size width="35" height="12"/>
+						<text font="Arial" size="12" align="center" weight="bold" color="#A6A8A8" format="SMART"/>
+					</textzone>
+					<textzone>
+						<pos x="+6" y="+50" />
+						<size width="35" height="12"/>
+						<text font="Arial" size="12" align="center" weight="bold" color="#A6A8A8" format="ROLL"/>
+					</textzone>
+					<button class="smartbutton" action="smart_loop" >
+						<Tooltip>Smart Loop</tooltip>
+						<pos x="+15" y="+32" />
+					</button>
+					<button class="smartbutton" action="loop_roll_mode" >
+						<Tooltip>Loop Roll Mode</tooltip>
+						<pos x="+15" y="+62" />
+					</button>
+					<button class="mixerbutton" action="sampler_rec" >
+						<Tooltip>Record Deck to Sample</tooltip>
+						<pos x="+161+40" y="+25" />
+						<text format="REC"/>
+						<textselected format="REC"/>
+					</button>
+					<button class="mixerbutton" action="loop_save" rightclick="loop_delete" query="loop_load">
+						<Tooltip>Save Current Loop\nRight-click to Delete</tooltip>
+						<pos x="+161" y="+55" />
+						<text format="SAVE"/>
+						<textselected format="SAVE"/>
+					</button>
+					<button class="mixerbutton" action="loop_load_prepare" rightclick="loop_load" >
+						<Tooltip>Prepare Saved Loop\nRight-click to Load and Jump to the Loop</tooltip>
+						<pos x="+161+40" y="+55" />
+						<text format="LOAD"/>
+						<textselected format="LOAD"/>
+					</button>
+					<button class="smallpad" action="loop" >
+						<Tooltip>Loop Active</tooltip>
+						<pos x="+90" y="+23" />
+						<text dx="3" width="52" font="Arial" align="center" size="15" weight="bold" color="#A6A8A8" format="%loop"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="15" weight="bold" color="white" format="%loop"/>
+					</button>
+					<button action="loop_half" >
+						<pos x="+90-38" y="+24" />
+						<size width="36" height="22"/>
+						<off x="265" y="912"/>
+						<on x="265" y="942"/>
+					</button>
+					<button action="loop_double" >
+						<pos x="+90+60" y="+24" />
+						<size width="36" height="22"/>
+						<off x="303" y="912"/>
+						<on x="303" y="942"/>
+					</button>
+					<slider class="fxslider" action="loop_position" orientation="horizontal">
+						<pos x="+94" y="+60"/>
+					</slider>
+					
+					<panel x="+0" y="+0" visibility="var 'shift' 0">
+						<button class="largepad" action="loop_in" >
+							<Tooltip>Set LOOP IN point</tooltip>
+							<pos x="+5" y="+20+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="IN"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="IN"/>
+						</button>
+						<button class="largepad" action="loop_out" query="loop ? blink : loop_out" >
+							<Tooltip>Set LOOP OUT point</tooltip>
+							<pos x="+5+113" y="+20+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="OUT"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="OUT"/>
+						</button>
+						<button class="largepad" action="loop" >
+							<Tooltip>LOOP</tooltip>
+							<pos x="+5" y="+50+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="LOOP"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="LOOP"/>
+						</button>
+						<button class="largepad" action="reloop" >
+							<Tooltip>Reloop</tooltip>
+							<pos x="+5+113" y="+50+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="RELOOP"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="RELOOP"/>
+						</button>			
+					</panel>
+					<panel x="+0" y="+0" visibility="var 'shift' 1">			
+						<button class="largepad" action="loop_roll 0.125" >
+							<Tooltip>LOOP ROLL 1/8</tooltip>
+							<pos x="+5" y="+20+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="ROLL 1/8"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="ROLL 1/8"/>
+						</button>
+						<button class="largepad" action="loop_roll 0.25" >
+							<Tooltip>LOOP ROLL 1/4</tooltip>
+							<pos x="+5+113" y="+20+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="ROLL 1/4"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="ROLL 1/4"/>
+						</button>
+						<button class="largepad" action="loop_roll 0.5" >
+							<Tooltip>LOOP ROLL 1/2</tooltip>
+							<pos x="+5" y="+50+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="ROLL 1/2"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="ROLL 1/2"/>
+						</button>
+						<button class="largepad" action="loop_roll 1" >
+							<Tooltip>LOOP ROLL 1</tooltip>
+							<pos x="+5+113" y="+50+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="ROLL 1"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="ROLL 1"/>
+						</button>	
+					</panel>
+
+				</group>
+				
+				<group name="FXs" x="+0" y="+149">	
+				
+					<button action="bs" class="panelbar" >
+						<Tooltip>EFFECTS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="EFFECTS"/>
+					</button>
+					<button class="smallpad" action="effect_active 1"  rightclick="effect 1 select">
+						<Tooltip>Effect SLOT 1\nRight-click to Select an Effect</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 1 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 1 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 2" rightclick="effect 2 select">
+						<Tooltip>Effect SLOT 2\nRight-click to Select an Effect</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 2 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 2 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 3" rightclick="effect 3 select">
+						<Tooltip>Effect SLOT 3\nRight-click to Select an Effect</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 3 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 3 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 4" rightclick="effect 4 select">
+						<Tooltip>Effect SLOT 4\nRight-click to Select an Effect</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 4 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 4 & param_uppercase"/>
+					</button>				
+
+					
+					
+				</group>
+
+				<group name="SAMPLESlp" x="+0" y="+198">
+					<button action="bs" class="panelbar" >
+						<Tooltip>SAMPLES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="SAMPLES"/>
+					</button>
+					<button class="smallpad" action="sampler_pad 1" rightclick="sampler_stop 1">
+						<Tooltip>SLOT 1</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 1"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 1"/>
+					</button>
+					<button class="smallpad" action="sampler_pad 2" rightclick="sampler_stop 2">
+						<Tooltip>SLOT 2</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 2"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 2"/>
+					</button>
+					<button class="smallpad" action="sampler_pad 3" rightclick="sampler_stop 3">
+						<Tooltip>SLOT 3</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 3"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 3"/>
+					</button>
+					<button class="smallpad" action="sampler_pad 4" rightclick="sampler_stop 4">
+						<Tooltip>SLOT 4</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 4"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 4"/>
+					</button>
+				</group>
+				
+				<group name="CUES" x="+0" y="+246">
+					<button action="bs" class="panelbar" >
+						<Tooltip>HOTCUES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="HOTCUES"/>
+					</button>
+					<button class="smallpad" action="hot_cue 1" rightclick="delete_cue 1">
+						<Tooltip>HOTCUE 1</tooltip>
+						<pos x="+0" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="1"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="1"/>
+					</button>
+					<button class="smallpad" action="hot_cue 2" rightclick="delete_cue 2">
+						<Tooltip>HOTCUE 2</tooltip>
+						<pos x="+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="2"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="2"/>
+					</button>
+					<button class="smallpad" action="hot_cue 3" rightclick="delete_cue 3">
+						<Tooltip>HOTCUE 3</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="3"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="3"/>
+					</button>
+					<button class="smallpad" action="hot_cue 4" rightclick="delete_cue 4">
+						<Tooltip>HOTCUE 4</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="4"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="4"/>
+					</button>
+				</group>
+				
+			</panel>
+			
+				--- CUES  -----
+			<panel name="CUESmode" x="20" y="228" visibility="var 'padvar' 2">
+				
+				<group name="Loops" x="+0" y="+0">
+					<button action="bs" class="panelbar" >
+						<Tooltip>LOOPS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="LOOPS"/>
+					</button>
+					<button class="smallpad" action="loop_in">
+						<Tooltip>Set LOOP IN point</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="IN"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="IN"/>
+					</button>
+					<button class="smallpad" action="loop_out" query="loop ? blink : loop_out">
+						<Tooltip>Set LOOP OUT point</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="OUT"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="OUT"/>
+					</button>
+					<button class="smallpad" action="loop">
+						<Tooltip>LOOP </tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="%loop"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="%loop"/>
+					</button>
+					<button class="smallpad" action="reloop" >
+						<Tooltip>Re-Loop</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="REL"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="REL"/>
+					</button>
+				</group>
+					
+				<group name="FXs" x="+0" y="+45">	
+				
+					<button action="bs" class="panelbar" >
+						<Tooltip>EFFECTS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="EFFECTS"/>
+					</button>
+					<button class="smallpad" action="effect_active 1" rightclick="effect 1 select">
+						<Tooltip>Effect SLOT 1\nRight-click to Select an Effect</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 1 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 1 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 2" rightclick="effect 2 select">
+						<Tooltip>Effect SLOT 2\nRight-click to Select an Effect</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 2 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 2 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 3" rightclick="effect 3 select">
+						<Tooltip>Effect SLOT 3\nRight-click to Select an Effect</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 3 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 3 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 4" rightclick="effect 4 select">
+						<Tooltip>Effect SLOT 4\nRight-click to Select an Effect</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 4 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 4 & param_uppercase"/>
+					</button>				
+
+					
+					
+				</group>
+
+				<group name="SAMPLEScues" x="+0" y="+90">
+					<button action="bs" class="panelbar" >
+						<Tooltip>SAMPLES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="SAMPLES"/>
+					</button>
+					<button class="smallpad" action="sampler_pad 1" rightclick="sampler_stop 1">
+						<Tooltip>SLOT 1</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 1"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 1"/>
+					</button>
+					<button class="smallpad" action="sampler_pad 2" rightclick="sampler_stop 2">
+						<Tooltip>SLOT 2</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 2"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 2"/>
+					</button>
+					<button class="smallpad" action="sampler_pad 3" rightclick="sampler_stop 3">
+						<Tooltip>SLOT 3</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 3"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 3"/>
+					</button>
+					<button class="smallpad" action="sampler_pad 4" rightclick="sampler_stop 4">
+						<Tooltip>SLOT 4</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 4"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 4"/>
+					</button>
+				</group>
+				
+				<group name="CUES" x="+0" y="+138">
+					<button action="bs" query="on" class="panelbar" >
+						<Tooltip>HOTCUES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="white" format="HOTCUES"/>
+					</button>
+					<button class="largepad" action="hot_cue 1" rightclick="delete_cue 1">
+						<Tooltip>HOTCUE 1</tooltip>
+						<pos x="+5" y="+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="1"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="1   %Pcue1"/>
+					</button>
+					<button action="bs" query="hot_cue 1" >
+						<pos x="+5" y="+20+25" />
+						<size width="110" height="30"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format=""/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="T: %Pfromcue1 B: %Bfromcue1\n%namecue1"/>
+					</button>
+					<button class="largepad" action="hot_cue 2" rightclick="delete_cue 2">
+						<Tooltip>HOTCUE 2</tooltip>
+						<pos x="+5+113" y="+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="2"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="2   %Pcue2"/>
+					</button>
+					<button action="bs" query="hot_cue 2" >
+						<pos x="+5+113" y="+20+25" />
+						<size width="110" height="30"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format=""/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="T: %Pfromcue2 B: %Bfromcue2\n%namecue2"/>
+					</button>
+					<button class="largepad" action="hot_cue 3" rightclick="delete_cue 3">
+						<Tooltip>HOTCUE 3</tooltip>
+						<pos x="+5" y="+20+66" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="3"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="3   %Pcue3"/>
+					</button>
+					<button action="bs" query="hot_cue 3" >
+						<pos x="+5" y="+20+66+25" />
+						<size width="110" height="30"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format=""/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="T: %Pfromcue3 B: %Bfromcue3\n%namecue3"/>
+					</button>
+					<button class="largepad" action="hot_cue 4" rightclick="delete_cue 4">
+						<Tooltip>HOTCUE 4</tooltip>
+						<pos x="+5+113" y="+20+66" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="4"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="4   %Pcue4"/>
+					</button>				
+					<button action="bs" query="hot_cue 4" >
+						<pos x="+5+113" y="+20+66+25" />
+						<size width="110" height="30"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format=""/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="T: %Pfromcue4 B: %Bfromcue1\n%namecue4"/>
+					</button>
+
+				</group>
+				
+			</panel>
+		
+
+				--- SAMPLES  -----
+			<panel name="SAMPLEmode" x="20" y="228" visibility="var 'padvar' 1">
+				
+				<group name="Loops" x="+0" y="+0">
+					<button action="bs" class="panelbar" >
+						<Tooltip>LOOPS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="LOOPS"/>
+					</button>
+					<button class="smallpad" action="loop_in">
+						<Tooltip>Set LOOP IN point</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="IN"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="IN"/>
+					</button>
+					<button class="smallpad" action="loop_out" query="loop ? blink : loop_out">
+						<Tooltip>Set LOOP OUT point</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="OUT"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="OUT"/>
+					</button>
+					<button class="smallpad" action="loop">
+						<Tooltip>LOOP</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="%loop"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="%loop"/>
+					</button>
+					<button class="smallpad" action="reloop" >
+						<Tooltip>Re-Loop</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="REL"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="REL"/>
+					</button>
+				</group>
+					
+				<group name="FXs" x="+0" y="+45">	
+				
+					<button action="bs" class="panelbar" >
+						<Tooltip>EFFECTS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="EFFECTS"/>
+					</button>
+					<button class="smallpad" action="effect_active 1" rightclick="effect 1 select">
+						<Tooltip>Effect SLOT 1\nRight-click to Select an Effect</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 1 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 1 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 2" rightclick="effect 2 select">
+						<Tooltip>Effect SLOT 2\nRight-click to Select an Effect</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 2 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 2 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 3" rightclick="effect 3 select">
+						<Tooltip>Effect SLOT 3\nRight-click to Select an Effect</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 3 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 3 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 4" rightclick="effect 4 select">
+						<Tooltip>Effect SLOT 4\nRight-click to Select an Effect</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 4 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 4 & param_uppercase"/>
+					</button>				
+
+					
+					
+				</group>
+
+				<group name="SAMPLES" x="+0" y="+90">
+					<button action="bs" query="on" class="panelbar" >
+						<Tooltip>SAMPLES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="white" format="SAMPLES"/>
+					</button>
+					
+					<button action="sampler_bank">
+						<pos x="+35" y="+20" />
+						<size width="152" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="BANK : `get_sampler_bank`"/>
+					</button>	
+					
+					<button class="largepad" action="sampler_pad 1" rightclick="sampler_stop 1">
+						<Tooltip>SLOT 1</tooltip>
+						<pos x="+5" y="+20+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 1"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 1"/>
+					</button>
+					<visual class="samplerpos" source="sampler_position 1" visibility="sampler_loaded 1" >
+						<pos x="+8" y="+20+25+20"/>
+					</visual>
+					<button action="bs" visibility="sampler_loaded 1" >
+						<Tooltip></Tooltip>
+						<pos x="+11" y="+20+35+20" />
+						<size width="30" height="15"/>
+						<text font="Arial" align="left" size="14" weight="bold" color="#A6A8A8" format="VOL :"/>
+					</button>
+					<slider class="samplervol" action="sampler_volume 1" visibility="sampler_loaded 1" >
+						<pos x="+11+35" y="+20+35+20"/>
+						<fader>
+							<pos x="10" y="10"/>
+							<size width="1" height="10"/>
+						</fader>
+					</slider>
+					<textzone visibility="sampler_loaded 1" >
+						<pos x="+11+35" y="+20+35+20" />
+						<size width="52" height="14"/>
+						<text font="Arial" align="center" size="13" weight="bold" color="white" format="`sampler_volume 1 & param_cast 'percentage'`"/>
+					</textzone>
+					
+					<button class="largepad" action="sampler_pad 2" rightclick="sampler_stop 2">
+						<Tooltip>SLOT 2</tooltip>
+						<pos x="+5+113" y="+20+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 2"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 2"/>
+					</button>
+					<visual class="samplerpos" source="sampler_position 2" visibility="sampler_loaded 2" >
+						<pos x="+8+113" y="+20+25+20"/>
+					</visual>
+					<button action="bs" visibility="sampler_loaded 2" >
+						<Tooltip></Tooltip>
+						<pos x="+11+113" y="+20+35+20" />
+						<size width="30" height="15"/>
+						<text font="Arial" align="left" size="14" weight="bold" color="#A6A8A8" format="VOL :"/>
+					</button>
+					<slider class="samplervol" action="sampler_volume 2" visibility="sampler_loaded 2" >
+						<pos x="+11+35+113" y="+20+35+20"/>
+						<fader>
+							<pos x="10" y="10"/>
+							<size width="1" height="10"/>
+						</fader>
+					</slider>
+					<textzone visibility="sampler_loaded 2" >
+						<pos x="+11+35+113" y="+20+35+20" />
+						<size width="52" height="14"/>
+						<text font="Arial" align="center" size="13" weight="bold" color="white" format="`sampler_volume 2 & param_cast 'percentage'`"/>
+					</textzone>			
+					
+					<button class="largepad" action="sampler_pad 3" rightclick="sampler_stop 3">
+						<Tooltip>SLOT 3</tooltip>
+						<pos x="+5" y="+20+55+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 3"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 3"/>
+					</button>
+					<visual class="samplerpos" source="sampler_position 3" visibility="sampler_loaded 3" >
+						<pos x="+8" y="+20+25+55+20"/>
+					</visual>
+					<button action="bs" visibility="sampler_loaded 3" >
+						<Tooltip></Tooltip>
+						<pos x="+11" y="+20+35+55+20" />
+						<size width="30" height="15"/>
+						<text font="Arial" align="left" size="14" weight="bold" color="#A6A8A8" format="VOL :"/>
+					</button>
+					<slider class="samplervol" action="sampler_volume 3" visibility="sampler_loaded 3" >
+						<pos x="+11+35" y="+20+35+55+20"/>
+						<fader>
+							<pos x="10" y="10"/>
+							<size width="1" height="10"/>
+						</fader>
+					</slider>
+					<textzone visibility="sampler_loaded 3" >
+						<pos x="+11+35" y="+20+35+55+20" />
+						<size width="52" height="14"/>
+						<text font="Arial" align="center" size="13" weight="bold" color="white" format="`sampler_volume 3 & param_cast 'percentage'`"/>
+					</textzone>
+					
+					<button class="largepad" action="sampler_pad 4" rightclick="sampler_stop 4">
+						<Tooltip>SLOT 4</tooltip>
+						<pos x="+5+113" y="+20+55+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_sample_name 4"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_sample_name 4"/>
+					</button>
+					<visual class="samplerpos" source="sampler_position 4" visibility="sampler_loaded 4" >
+						<pos x="+8+113" y="+20+25+55+20"/>
+					</visual>
+					<button action="bs" visibility="sampler_loaded 4" >
+						<Tooltip></Tooltip>
+						<pos x="+11+113" y="+20+35+55+20" />
+						<size width="30" height="15"/>
+						<text font="Arial" align="left" size="14" weight="bold" color="#A6A8A8" format="VOL :"/>
+					</button>
+					<slider class="samplervol" action="sampler_volume 4" visibility="sampler_loaded 4" >
+						<pos x="+11+35+113" y="+20+35+55+20"/>
+						<fader>
+							<pos x="10" y="10"/>
+							<size width="1" height="10"/>
+						</fader>
+					</slider>
+					<textzone visibility="sampler_loaded 4" >
+						<pos x="+11+35+113" y="+20+35+55+20" />
+						<size width="52" height="14"/>
+						<text font="Arial" align="center" size="13" weight="bold" color="white" format="`sampler_volume 4 & param_cast 'percentage'`"/>
+					</textzone>		
+
+				</group>
+				
+				<group name="CUES" x="+0" y="+246">
+					<button action="bs" class="panelbar" >
+						<Tooltip>HOTCUES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="HOTCUES"/>
+					</button>
+					<button class="smallpad" action="hot_cue 1" rightclick="delete_cue 1">
+						<Tooltip>HOTCUE 1</tooltip>
+						<pos x="+0" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="1"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="1"/>
+					</button>
+					<button class="smallpad" action="hot_cue 2" rightclick="delete_cue 2">
+						<Tooltip>HOTCUE 2</tooltip>
+						<pos x="+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="2"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="2"/>
+					</button>
+					<button class="smallpad" action="hot_cue 3" rightclick="delete_cue 3">
+						<Tooltip>HOTCUE 3</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="3"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="3"/>
+					</button>
+					<button class="smallpad" action="hot_cue 4" rightclick="delete_cue 4">
+						<Tooltip>HOTCUE 4</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="4"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="4"/>
+					</button>
+				</group>
+				
+			</panel>	
+
+
+	</deck>
+
+
+
+	********************************************************************************************************************
+	DECK 2 
+	*********************************************************************************************************************
+
+	<deck deck="right">
+	 
+		<group name="rightinfo" x="28+980" y="130">
+			<songpos colorPlayed="#e48300" colorBass="#7a4700" colorMed="#e48300" colorHigh="#e9c07f" >
+				<pos x="+2" y="+63" />
+				<size width="559" height="31"/>
+				<cues>
+					<size width="2" height="31"/>
+					<up x="521" y="941"/>
+					<over x="551" y="941"/>
+				</cues>
+			 </songpos>
+			 <visual type="color" source="constant 'black'" visibility="var '@$showcues' 2">
+				<Tooltip></Tooltip>
+				<pos x="+2" y="+63+18" />
+				<size width="559" height="13"/>
+			</visual>
+			<visual type="linear" orientation="horizontal" direction="right" source="song_pos" visibility="var '@$showcues' 2">
+				<Tooltip></Tooltip>
+				<pos x="+2" y="+63+19" />
+				<size width="559" height="2"/>
+				<off x="875" y="1237"/>
+				<on x="875" y="1257"/>
+			</visual>
+			<panel name="cuespos" x="28+980" y="130" visibility="not var '@$showcues' 0" >		 
+				<slider action="cue_pos 1" visibility="automix ? false : hot_cue 1">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="270" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 2" visibility="automix ? false : hot_cue 2">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="290" y="1011"/>
+						</fader>
+				</slider>
+					<slider action="cue_pos 3" visibility="automix ? false : hot_cue 3">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="310" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 4" visibility="automix ? false : hot_cue 4">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="330" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 5" visibility="automix ? false : hot_cue 5">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="350" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 6" visibility="automix ? false : hot_cue 6">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="370" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 7" visibility="automix ? false : hot_cue 7">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="390" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 8" visibility="automix ? false : hot_cue 8">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="410" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 9" visibility="automix ? false : hot_cue 9">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="430" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 10" visibility="automix ? false : hot_cue 10">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="450" y="1011"/>
+						</fader>
+				</slider>
+			</panel>
+		
+
+			<dropzone >
+				<pos x="+0" y="-4" />
+				<size width="560" height="370"/>
+			</dropzone>
+
+			<panel name="TextsRight" visibility="not var '@$showcover' 1">
+				<textzone >
+					<pos x="+3" y="+0" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="ARTIST" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3" y="+23" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="TITLE" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3" y="+48" />
+					<size width="47" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="COMMENT" scroll="no"/>
+				</textzone>
+				
+				<textzone >
+					<pos x="+40" y="-1" />
+					<size width="377" height="22"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="22" color="#F09B18"  format="%Author" scroll="no"/>
+					<text2 font="arial" size="22" color="#F09B18" format="%Author" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+40" y="+23" />
+					<size width="377" height="18"/>
+					<up x="+0" y="+0"/>
+						<text font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="no"/>
+					<text2 font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+54" y="+45" />
+					<size width="172" height="18"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="15" color="#d1d3d4"  align="left" format="`get loaded_song 'comment'`" scroll="yes"/>
+				 </textzone>
+			</panel>
+			<panel name="TextsRightCover" visibility="var '@$showcover' 1">
+				<cover>
+					<pos x="+0" y="-3" />
+					<size width="65" height="65"/>		
+				</cover>
+				<textzone >
+					<pos x="+3+65" y="+0" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="ARTIST" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3+65" y="+23" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="TITLE" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3+65" y="+48" />
+					<size width="47" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="COMMENT" scroll="no"/>
+				</textzone>
+				
+				<textzone >
+					<pos x="+40+65" y="-1" />
+					<size width="377-65" height="22"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="22" color="#F09B18"  format="%Author" scroll="no"/>
+					<text2 font="arial" size="22" color="#F09B18" format="%Author" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+40+65" y="+23" />
+					<size width="377-65" height="18"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="no"/>
+					<text2 font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+54+65" y="+45" />
+					<size width="172-65" height="18"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="15" color="#d1d3d4"  align="left" format="`get loaded_song 'comment'`" scroll="yes"/>
+				 </textzone>
+			</panel>
+
+			<group name="othertexts">
+				<textzone >
+					<pos x="+420" y="+8" />
+					<size width="45" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="REMAIN" scroll="no"/>
+				</textzone>	
+				<textzone >
+					<pos x="+420" y="+35" />
+					<size width="45" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="ELAPSED" scroll="no"/>
+				</textzone>	
+				<textzone >
+					<pos x="+467" y="+31" />
+					<size width="90" height="22"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="24" color="#F09B18" align="left" format="%Pspent"/>
+				</textzone>
+				<button action="bs" query="songpos_remain 30000ms ? blink 800ms : on">
+					<Tooltip></Tooltip>
+					<pos x="+467" y="+3" />
+					<size width="90" height="22"/>
+					<text font="arial" size="24" color="#9D9E9E" align="left" format="%Pleft"/>
+					<textselected font="arial" size="24" color="#FFFFFF" align="left" format="%Pleft"/>
+				</button> 
+				
+				<textzone >
+					<pos x="+231" y="+48" />
+					<size width="23" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="KEY" scroll="no"/>
+				</textzone>	
+				<textzone >
+					<pos x="+318" y="+48" />
+					<size width="26" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="GAIN" scroll="no"/>
+				</textzone>	
+				
+				<textzone >
+					<pos x="+254" y="+45" />
+					<size width="60" height="16"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="16" color="#FFFFFF" align="center" format="%Pkey/%Pcamelot"/>
+				</textzone>
+				<textzone >
+					<pos x="+344" y="+45" />
+					<size width="65" height="16"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="16" color="#FFFFFF" align="left" format="%Plevel db"/>
+				</textzone>
+				
+				<button action="file_info" class="infoicon">
+					<pos x="+550" y="+0" />
+				</button>	
+				<button action="setting 'hideSonginfo'" class="eyeicon">
+					<pos x="+547" y="+22" />
+				</button>
+				 <menu class="optionsicon">
+					<tooltip>DeckOptions</tooltip>
+					<pos x="+547" y="+40" />
+					<submenu text="Track Cover">
+						<item text="No Cover" action="set '@$showcover' 0" check="var '@$showcover' 0"/>
+						<item text="Cover on Deck" action="set '@$showcover' 1" check="var '@$showcover' 1"/>
+						<item text="Cover on Jogwheel" action="set '@$showcover' 2" check="var '@$showcover' 2"/>
+					</submenu>
+					<submenu text="Track Progress bar Style">
+						<item text="Default" action="set '@$showcues' 0" check="var '@$showcues' 0"/>	
+						<item text="Cue Markers" action="set '@$showcues' 1" check="var '@$showcues' 1"/>	
+						<item text="Pioneer style" action="set '@$showcues' 2" check="var '@$showcues' 2"/>	
+					</submenu>
+					<submenu text="Track Progress bar Color">
+						<item text="Monochrome" action="setting 'ColoredWaveforms' 'monochrome'" check="setting 'ColoredWaveforms' 'monochrome'"/>	
+						<item text="Neutral" action="setting 'ColoredWaveforms' 'neutral'" check="setting 'ColoredWaveforms' 'neutral'"/>	
+						<item text="Infra-red" action="setting 'ColoredWaveforms' 'infra-red'" check="setting 'ColoredWaveforms' 'infra-red'"/>	
+						 <item text="Per-deck" action="setting 'ColoredWaveforms' 'per-deck'" check="setting 'ColoredWaveforms' 'per-deck'"/>	
+						<item text="Ultra-blue" action="setting 'ColoredWaveforms' 'ultra-blue'" check="setting 'ColoredWaveforms' 'ultra-blue'"/>	
+					</submenu>
+				</menu>
+			</group>
+			
+		</group>
+			
+		<group name="righttempoinfo" x="268+980" y="229">		
+			<textzone >
+				<pos x="+25" y="+0" />
+				<size width="62" height="22"/>
+				<up x="+0" y="+0"/>
+				<text font="arial" size="22" color="#F09B18" align="right"  format="%Pbpmex"/>
+			</textzone>
+			<button action="edit_bpm">
+				<pos x="+0" y="+7" />
+				<size width="30" height="14"/>
+				<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="BPM" scroll="no"/>
+				<textover font="arial" size="12" align="left" color="white"  weight="bold" format="BPM" scroll="no"/>
+			</button>	
+		
+			<textzone >
+				<pos x="+0" y="+25" />
+				<size width="30" height="14"/>
+				<up x="+0" y="+0"/>
+				<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="PITCH" scroll="no"/>
+			</textzone>	
+			<textzone >
+				<pos x="+29" y="+20" />
+				<size width="57" height="20"/>
+				<up x="+0" y="+0"/>
+				<text font="arial" size="18" color="#FFFFFF" align="right" format="%Ppitch"/>
+			</textzone>
+			<textzone >
+					<pos x="+0" y="+41" />
+					<size width="30" height="12"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="10" align="left" color="#9D9E9E"  weight="bold" format="RANGE" scroll="no"/>
+				</textzone>	
+			<button action="pitch_range" value="+1" rightclick="-2">
+				<pos x="+33" y="+40" />
+				<size width="50" height="12"/>
+				<text dx="0" dy="0" width="43" font="ARIAL" size="14" color="white" align="center" format="%pitchrange%%"/>
+				<up x="+0" y="+0"/>
+			</button>
+		</group>
+
+		
+			<group name="Jogright" x="360+677" y="250">
+				<visual >
+					<Tooltip></Tooltip>
+					<pos x="+0" y="+0" />
+					<size width="202" height="202"/>
+					<off x="305" y="1907"/>
+				</visual>
+				<cover rotate="yes" visibility="var '@$showcover' 2">
+					<pos x="+30" y="+30" />
+					<size width="142" height="142"/>			
+				</cover>
+				<visual visibility="var '@$showcover' 2">
+					<Tooltip></Tooltip>
+					<pos x="+0" y="+0" />
+					<size width="202" height="202"/>
+					<off x="555" y="2127"/>
+				</visual>	
+				<visual visibility="vinyl_mode">
+					<Tooltip></Tooltip>
+					<pos x="+0" y="+0" />
+					<size width="202" height="202"/>
+					<off x="1305" y="2147"/>
+				</visual>
+				<visual type="rotation" source="get rotation" >
+					<Tooltip></Tooltip>
+					<pos x="+0" y="+0" />
+					<size width="202" height="202"/>
+					<on x="55" y="1907"/>
+				</visual>
+				<scratch>
+					<pos x="+0" y="+0" />
+					<size width="202" height="202"/>
+					<mousemask x="555" y="1907"/>
+				</scratch>
+				<visual visibility="touchwheel_touch" >
+				<Tooltip></Tooltip>
+					<pos x="+0" y="+0" />
+					<size width="202" height="202"/>
+					<off x="1055" y="1907"/>
+				</visual>
+			</group>
+
+			
+			<group name="Controlright" x="360+690" y="250+220">
+				<button action="play_pause" query="loaded ? play ? on : blink : off" rightclick="reverse">
+					<tooltip>Play Pause / Rightclick to play in reverse</tooltip>
+					<pos x="+65+65" y="473" />
+					<size width="58" height="35"/>
+					<off x="148" y="1074"/>
+					<on x="148" y="1114"/>
+				</button>
+				<button action="cue_stop" query="loaded ? pause ? cue ? on : blink : off : off" rightclick="stop">
+					<tooltip>Cue Stop / Rightclick to Stop</tooltip>
+					<pos x="+65" y="473" />
+					<size width="58" height="35"/>
+					<off x="79" y="1074"/>
+					<on x="79" y="1114"/>
+				</button>
+				<button action="sync" >
+					<tooltip>Sync button</tooltip>
+					<pos x="+0" y="473" />
+					<size width="58" height="35"/>
+					<off x="9" y="1074"/>
+					<on x="9" y="1114"/>
+				</button>
+			
+			</group>
+
+		<group name="SubControls" x="360+690" y="460" >
+
+			<button class="optionsbutton" action="beat_tap" >
+				<tooltip>Manual Beat Tap</tooltip>
+				<pos x="+0" y="+0" />
+				<text format="TAP"/>
+				<textselected format="TAP"/>
+				<textdown format="TAP"/>
+			</button>
+			<button class="optionsbutton" action="smart_cue" >
+				<tooltip>Smart Cue</tooltip>
+				<pos x="+64" y="+0" />
+				<text format="SMART"/>
+				<textselected format="SMART"/>
+				<textdown format="SMART"/>
+			</button>
+			<button class="optionsbutton" action="smart_play" >
+				<tooltip>Smart Play</tooltip>
+				<pos x="+130" y="+0" />
+				<text format="SMART"/>
+				<textselected format="SMART"/>
+				<textdown format="SMART"/>
+			</button>
+		</group>
+			
+		<button action="seek -4" >
+			<tooltip>Seek Backward button</tooltip>
+			<pos x="1010" y="238" />
+			<size width="36" height="22"/>
+			<off x="386" y="943"/>
+			<on x="386" y="973"/>
+		</button>
+		<button action="seek +4" >
+			<tooltip>Seek Forward button</tooltip>
+			<pos x="1048" y="238" />
+			<size width="36" height="22"/>
+			<off x="423" y="943"/>
+			<on x="423" y="973"/>
+		</button>
+		
+
+		<button action="select" >
+			<pos x="1208" y="228" />
+			<size width="31" height="32"/>
+			<text font="arial" size="32" weight="bold" color="#9D9E9E" format="B"/>
+			<textselected font="arial" size="32" weight="bold" color="#F09B18" format="B"/>
+		</button>
+
+		<group name="pitchcontrol" >
+			<slider action="pitch" orientation="vertical" direction="down" dblclick="pitch 100%" rightclick="temporary" >
+				<pos x="1272" y="294" />
+				<size width="42" height="121"/>
+				<off x="20" y="1186"/>
+				<on x="100" y="1186"/>
+				<fader>
+					<size width="39" height="18"/>
+					<pos x="276" y="1839"/>
+				</fader>
+				<reset value="50"/>
+			</slider>
+			<button action="pitch_bend -1% 500ms" rightclick="pitch_bend -5% 500ms">
+				<pos x="1258" y="436" />
+				<size width="36" height="22"/>
+				<off x="265" y="912"/>
+				<on x="265" y="942"/>
+			</button>
+			<button action="pitch_bend +1% 500ms" rightclick="pitch_bend +5% 500ms">
+				<pos x="1296" y="436" />
+				<size width="36" height="22"/>
+				<off x="303" y="912"/>
+				<on x="303" y="942"/>
+			</button>
+
+			<button action="key_lock" >
+				<pos x="1238" y="294" />
+				<size width="35" height="22"/>
+				<off x="339" y="912"/>
+				<on x="339" y="942"/>
+				<text font="arial" size="12" align="center" color="#9D9E9E" weight="bold" format="KLCK"/>
+				<textselected font="arial" size="12" align="center" color="white" weight="bold" format="KLCK"/>
+			</button>
+			<button class="lock" action="pitchlock" >
+				<pos x="1317" y="342" />
+			</button>
+		</group>
+
+
+			--- FX  -----
+			<panel name="FXmodeR" x="20+1322" y="228" visible="var 'padvar' 0">
+				
+				<group name="Loops" x="+0" y="+0">
+					<button action="bs" class="panelbar" >
+						<Tooltip>LOOPS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="LOOPS"/>
+					</button>
+					<button class="smallpad" action="loop_in">
+						<Tooltip>Set LOOP IN point</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="IN"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="IN"/>
+					</button>
+					<button class="smallpad" action="loop_out" query="loop ? blink : loop_out">
+						<Tooltip>Set LOOP OUT point</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="OUT"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="OUT"/>
+					</button>
+					<button class="smallpad" action="loop">
+						<Tooltip>LOOP</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="%loop"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="%loop"/>
+					</button>
+					<button class="smallpad" action="reloop" >
+						<Tooltip>Re-Loop</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="REL"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="REL"/>
+					</button>
+				</group>
+				
+				<group name="FXs" x="+0" y="+45">	
+					<button action="bs" query="on" class="panelbar" >
+						<Tooltip>EFFECTS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="white" format="EFFECTS"/>
+					</button>			
+					<button class="largepad" action="effect_active 1" rightclick="effect 1 select">
+						<Tooltip>Effect SLOT 1\nRight-click to Select an Effect</tooltip>
+						<pos x="+5" y="+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 1 & param_uppercase"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 1 & param_uppercase"/>
+					</button>
+					<button class="largepad" action="effect_active 2" rightclick="effect 2 select">
+						<Tooltip>Effect SLOT 2\nRight-click to Select an Effect</tooltip>
+						<pos x="+5+113" y="+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 2 & param_uppercase"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 2 & param_uppercase"/>
+					</button>
+					<button class="largepad" action="effect_active 3" rightclick="effect 3 select">
+						<Tooltip>Effect SLOT 3\nRight-click to Select an Effect</tooltip>
+						<pos x="+5" y="+20+66" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 3 & param_uppercase"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 3 & param_uppercase"/>
+					</button>
+					<button class="largepad" action="effect_active 4" rightclick="effect 4 select">
+						<Tooltip>Effect SLOT 4\nRight-click to Select an Effect</tooltip>
+						<pos x="+5+113" y="+20+66" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 4 & param_uppercase"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 4 & param_uppercase"/>
+					</button>
+					<slider class="fxslider" action="effect_slider 1 1" orientation="horizontal">
+						<pos x="+12" y="+46"/>
+					</slider>
+					<textzone >
+						<pos x="+12" y="+44+12" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 1 1"/>
+					</textzone>
+					<slider class="fxslider" action="effect_slider 1 2" orientation="horizontal">
+						<pos x="+12+49" y="+46"/>
+					</slider>
+					<textzone >
+						<pos x="+12+49" y="+44+12" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 1 2"/>
+					</textzone>
+					
+					<slider class="fxslider" action="effect_slider 2 1" orientation="horizontal">
+						<pos x="+12+113" y="+46"/>
+					</slider>
+					<textzone >
+						<pos x="+12+113" y="+44+12" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 2 1"/>
+					</textzone>
+					<slider class="fxslider" action="effect_slider 2 2" orientation="horizontal">
+						<pos x="+12+49+113" y="+46"/>
+					</slider>
+					<textzone >
+						<pos x="+12+49+113" y="+44+12" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 2 2"/>
+					</textzone>
+					
+					<slider class="fxslider" action="effect_slider 3 1" orientation="horizontal">
+						<pos x="+12" y="+46+66"/>
+					</slider>
+					<textzone >
+						<pos x="+12" y="+44+12+66" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 3 1"/>
+					</textzone>
+					<slider class="fxslider" action="effect_slider 3 2" orientation="horizontal">
+						<pos x="+12+49" y="+46+66"/>
+					</slider>
+					<textzone >
+						<pos x="+12+49" y="+44+12+66" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 3 2"/>
+					</textzone>
+					
+					<slider class="fxslider" action="effect_slider 4 1" orientation="horizontal">
+						<pos x="+12+113" y="+46+66"/>
+					</slider>
+					<textzone >
+						<pos x="+12+113" y="+44+12+66" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 4 1"/>
+					</textzone>
+					<slider class="fxslider" action="effect_slider 4 2" orientation="horizontal">
+						<pos x="+12+49+113" y="+46+66"/>
+					</slider>
+					<textzone >
+						<pos x="+12+49+113" y="+44+12+66" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 4 2"/>
+					</textzone>
+					
+					
+				</group>
+
+				<group name="SAMPLESRIGHTfx" x="+0" y="+198">
+					<button action="bs" class="panelbar" >
+						<Tooltip>SAMPLES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="SAMPLES"/>
+					</button>
+					<button class="smallpad" action="param_bigger get_sampler_count 5 ? sampler_pad 1 : sampler_pad 5" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 1 : sampler_stop 5">
+						<Tooltip>SLOT 1</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 1 : get_sample_name 5"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 1 : get_sample_name 5"/>
+					</button>
+						<button class="smallpad" action="param_bigger get_sampler_count 5 ? sampler_pad 2 : sampler_pad 6" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 2 : sampler_stop 6">
+						<Tooltip>SLOT 2</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 2 : get_sample_name 6"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 2 : get_sample_name 6"/>
+					</button>
+					<button class="smallpad" action="param_bigger get_sampler_count 5 ? sampler_pad 3 : sampler_pad 7" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 3 : sampler_stop 7">
+						<Tooltip>SLOT 3</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 3 : get_sample_name 7"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 3 : get_sample_name 7"/>
+					</button>
+					<button class="smallpad" action="param_bigger get_sampler_count 5 ? sampler_pad 4 : sampler_pad 8" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 4 : sampler_stop 8">
+						<Tooltip>SLOT 4</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 4 : get_sample_name 8"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 4 : get_sample_name 8"/>
+					</button>
+				</group>
+				
+				<group name="CUES" x="+0" y="+246">
+					<button action="bs" class="panelbar" >
+						<Tooltip>HOTCUES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="HOTCUES"/>
+					</button>
+					<button class="smallpad" action="hot_cue 1" rightclick="delete_cue 1">
+						<Tooltip>HOTCUE 1</tooltip>
+						<pos x="+0" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="1"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="1"/>
+					</button>
+					<button class="smallpad" action="hot_cue 2" rightclick="delete_cue 2">
+						<Tooltip>HOTCUE 2</tooltip>
+						<pos x="+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="2"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="2"/>
+					</button>
+					<button class="smallpad" action="hot_cue 3" rightclick="delete_cue 3">
+						<Tooltip>HOTCUE 3</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="3"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="3"/>
+					</button>
+					<button class="smallpad" action="hot_cue 4" rightclick="delete_cue 4">
+						<Tooltip>HOTCUE 4</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="4"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="4"/>
+					</button>
+				</group>
+				
+			</panel>
+			
+			--- LOOPS  -----
+			<panel name="LOOPmodeR" x="20+1322" y="228" visible="var 'padvar' 3">
+				
+				<group name="Loops" x="+0" y="+0">
+					<button action="bs" query="on" class="panelbar" >
+						<Tooltip>LOOPS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="white" format="LOOPS"/>
+					</button>
+					<textzone>
+						<pos x="+6" y="+20" />
+						<size width="35" height="12"/>
+						<text font="Arial" size="12" align="center" weight="bold" color="#A6A8A8" format="SMART"/>
+					</textzone>
+					<textzone>
+						<pos x="+6" y="+50" />
+						<size width="35" height="12"/>
+						<text font="Arial" size="12" align="center" weight="bold" color="#A6A8A8" format="ROLL"/>
+					</textzone>
+					<button class="smartbutton" action="smart_loop" >
+						<Tooltip>Smart Loop</tooltip>
+						<pos x="+15" y="+32" />
+					</button>
+					<button class="smartbutton" action="loop_roll_mode" >
+						<Tooltip>Loop Roll Mode</tooltip>
+						<pos x="+15" y="+62" />
+					</button>
+					<button class="mixerbutton" action="sampler_rec" >
+						<Tooltip>Record Deck to Sample</tooltip>
+						<pos x="+161+40" y="+25" />
+						<text format="REC"/>
+						<textselected format="REC"/>
+					</button>
+					<button class="mixerbutton" action="loop_save" rightclick="loop_delete" query="loop_load">
+						<Tooltip>Save Current Loop\nRight-click to Delete</tooltip>
+						<pos x="+161" y="+55" />
+						<text format="SAVE"/>
+						<textselected format="SAVE"/>
+					</button>
+					<button class="mixerbutton" action="loop_load_prepare" rightclick="loop_load" >
+						<Tooltip>Prepare Saved Loop\nRight-click to Load and Jump to the Loop</tooltip>
+						<pos x="+161+40" y="+55" />
+						<text format="LOAD"/>
+						<textselected format="LOAD"/>
+					</button>
+					<button class="smallpad" action="loop" >
+						<Tooltip>Loop Active</tooltip>
+						<pos x="+90" y="+23" />
+						<text dx="3" width="52" font="Arial" align="center" size="15" weight="bold" color="#A6A8A8" format="%loop"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="15" weight="bold" color="white" format="%loop"/>
+					</button>
+					<button action="loop_half" >
+						<pos x="+90-38" y="+24" />
+						<size width="36" height="22"/>
+						<off x="265" y="912"/>
+						<on x="265" y="942"/>
+					</button>
+					<button action="loop_double" >
+						<pos x="+90+60" y="+24" />
+						<size width="36" height="22"/>
+						<off x="303" y="912"/>
+						<on x="303" y="942"/>
+					</button>
+					<slider class="fxslider" action="loop_position" orientation="horizontal">
+						<pos x="+94" y="+60"/>
+					</slider>
+					
+					<panel x="+0" y="+0" visibility="var 'shift' 0">
+						<button class="largepad" action="loop_in" >
+							<Tooltip>Set LOOP IN point</tooltip>
+							<pos x="+5" y="+20+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="IN"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="IN"/>
+						</button>
+						<button class="largepad" action="loop_out" query="loop ? blink : loop_out" >
+							<Tooltip>Set LOOP OUT point</tooltip>
+							<pos x="+5+113" y="+20+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="OUT"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="OUT"/>
+						</button>
+						<button class="largepad" action="loop" >
+							<Tooltip>LOOP</tooltip>
+							<pos x="+5" y="+50+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="LOOP"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="LOOP"/>
+						</button>
+						<button class="largepad" action="reloop" >
+							<Tooltip>Reloop</tooltip>
+							<pos x="+5+113" y="+50+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="RELOOP"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="RELOOP"/>
+						</button>			
+					</panel>
+					<panel x="+0" y="+0" visibility="var 'shift' 1">			
+						<button class="largepad" action="loop_roll 0.125" >
+							<Tooltip>LOOP ROLL 1/8</tooltip>
+							<pos x="+5" y="+20+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="ROLL 1/8"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="ROLL 1/8"/>
+						</button>
+						<button class="largepad" action="loop_roll 0.25" >
+							<Tooltip>LOOP ROLL 1/4</tooltip>
+							<pos x="+5+113" y="+20+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="ROLL 1/4"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="ROLL 1/4"/>
+						</button>
+						<button class="largepad" action="loop_roll 0.5" >
+							<Tooltip>LOOP ROLL 1/2</tooltip>
+							<pos x="+5" y="+50+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="ROLL 1/2"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="ROLL 1/2"/>
+						</button>
+						<button class="largepad" action="loop_roll 1" >
+							<Tooltip>LOOP ROLL 1</tooltip>
+							<pos x="+5+113" y="+50+65" />
+							<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="ROLL 1"/>
+							<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="ROLL 1"/>
+						</button>	
+					</panel>
+
+				</group>
+				
+				<group name="FXs" x="+0" y="+149">	
+				
+					<button action="bs" class="panelbar" >
+						<Tooltip>EFFECTS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="EFFECTS"/>
+					</button>
+					<button class="smallpad" action="effect_active 1" rightclick="effect 1 select">
+						<Tooltip>Effect SLOT 1\nRight-click to Select an Effect</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 1 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 1 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 2" rightclick="effect 2 select">
+						<Tooltip>Effect SLOT 2\nRight-click to Select an Effect</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 2 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 2 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 3" rightclick="effect 3 select">
+						<Tooltip>Effect SLOT 3\nRight-click to Select an Effect</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 3 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 3 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 4" rightclick="effect 4 select">
+						<Tooltip>Effect SLOT 4\nRight-click to Select an Effect</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 4 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 4 & param_uppercase"/>
+					</button>				
+
+					
+					
+				</group>
+
+				<group name="SAMPLESRightlp" x="+0" y="+198">
+					<button action="bs" class="panelbar" >
+						<Tooltip>SAMPLES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="SAMPLES"/>
+					</button>
+					<button class="smallpad" action="param_bigger get_sampler_count 5 ? sampler_pad 1 : sampler_pad 5" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 1 : sampler_stop 5">
+						<Tooltip>SLOT 1</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 1 : get_sample_name 5"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 1 : get_sample_name 5"/>
+					</button>
+						<button class="smallpad" action="param_bigger get_sampler_count 5 ? sampler_pad 2 : sampler_pad 6" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 2 : sampler_stop 6">
+						<Tooltip>SLOT 2</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 2 : get_sample_name 6"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 2 : get_sample_name 6"/>
+					</button>
+					<button class="smallpad" action="param_bigger get_sampler_count 5 ? sampler_pad 3 : sampler_pad 7" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 3 : sampler_stop 7">
+						<Tooltip>SLOT 3</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 3 : get_sample_name 7"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 3 : get_sample_name 7"/>
+					</button>
+					<button class="smallpad" action="param_bigger get_sampler_count 5 ? sampler_pad 4 : sampler_pad 8" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 4 : sampler_stop 8">
+						<Tooltip>SLOT 4</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 4 : get_sample_name 8"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 4 : get_sample_name 8"/>
+					</button>
+				</group>
+				
+				<group name="CUES" x="+0" y="+246">
+					<button action="bs" class="panelbar" >
+						<Tooltip>HOTCUES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="HOTCUES"/>
+					</button>
+					<button class="smallpad" action="hot_cue 1" rightclick="delete_cue 1">
+						<Tooltip>HOTCUE 1</tooltip>
+						<pos x="+0" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="1"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="1"/>
+					</button>
+					<button class="smallpad" action="hot_cue 2" rightclick="delete_cue 2">
+						<Tooltip>HOTCUE 2</tooltip>
+						<pos x="+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="2"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="2"/>
+					</button>
+					<button class="smallpad" action="hot_cue 3" rightclick="delete_cue 3">
+						<Tooltip>HOTCUE 3</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="3"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="3"/>
+					</button>
+					<button class="smallpad" action="hot_cue 4" rightclick="delete_cue 4">
+						<Tooltip>HOTCUE 4</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="4"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="4"/>
+					</button>
+				</group>
+				
+			</panel>
+		
+		
+				--- CUES  -----
+			<panel name="CUESmodeR" x="20+1322" y="228" visible="var 'padvar' 2">
+				
+				<group name="Loops" x="+0" y="+0">
+					<button action="bs" class="panelbar" >
+						<Tooltip>LOOPS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="LOOPS"/>
+					</button>
+					<button class="smallpad" action="loop_in">
+						<Tooltip>Set LOOP IN point</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="IN"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="IN"/>
+					</button>
+					<button class="smallpad" action="loop_out" query="loop ? blink : loop_out">
+						<Tooltip>Set LOOP OUT point</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="OUT"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="OUT"/>
+					</button>
+					<button class="smallpad" action="loop">
+						<Tooltip>LOOP </tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="%loop"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="%loop"/>
+					</button>
+					<button class="smallpad" action="reloop" >
+						<Tooltip>Re-Loop</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="REL"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="REL"/>
+					</button>
+				</group>
+					
+				<group name="FXs" x="+0" y="+45">	
+				
+					<button action="bs" class="panelbar" >
+						<Tooltip>EFFECTS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="EFFECTS"/>
+					</button>
+					<button class="smallpad" action="effect_active 1" rightclick="effect 1 select">
+						<Tooltip>Effect SLOT 1\nRight-click to Select an Effect</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 1 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 1 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 2" rightclick="effect 2 select">
+						<Tooltip>Effect SLOT 2\nRight-click to Select an Effect</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 2 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 2 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 3" rightclick="effect 3 select">
+						<Tooltip>Effect SLOT 3\nRight-click to Select an Effect</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 3 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 3 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 4" rightclick="effect 4 select">
+						<Tooltip>Effect SLOT 4\nRight-click to Select an Effect</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 4 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 4 & param_uppercase"/>
+					</button>				
+
+					
+					
+				</group>
+
+				<group name="SAMPLESrithcues" x="+0" y="+90">
+					<button action="bs" class="panelbar" >
+						<Tooltip>SAMPLES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="SAMPLES"/>
+					</button>
+					<button class="smallpad" action="param_bigger get_sampler_count 5 ? sampler_pad 1 : sampler_pad 5" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 1 : sampler_stop 5">
+						<Tooltip>SLOT 1</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 1 : get_sample_name 5"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 1 : get_sample_name 5"/>
+					</button>
+						<button class="smallpad" action="param_bigger get_sampler_count 5 ? sampler_pad 2 : sampler_pad 6" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 2 : sampler_stop 6">
+						<Tooltip>SLOT 2</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 2 : get_sample_name 6"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 2 : get_sample_name 6"/>
+					</button>
+					<button class="smallpad" action="param_bigger get_sampler_count 5 ? sampler_pad 3 : sampler_pad 7" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 3 : sampler_stop 7">
+						<Tooltip>SLOT 3</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 3 : get_sample_name 7"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 3 : get_sample_name 7"/>
+					</button>
+					<button class="smallpad" action="param_bigger get_sampler_count 5 ? sampler_pad 4 : sampler_pad 8" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 4 : sampler_stop 8">
+						<Tooltip>SLOT 4</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 4 : get_sample_name 8"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 4 : get_sample_name 8"/>
+					</button>
+				</group>
+				
+				<group name="CUES" x="+0" y="+138">
+					<button action="bs" query="on" class="panelbar" >
+						<Tooltip>HOTCUES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="white" format="HOTCUES"/>
+					</button>
+					<button class="largepad" action="hot_cue 1" rightclick="delete_cue 1">
+						<Tooltip>HOTCUE 1</tooltip>
+						<pos x="+5" y="+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="1"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="1   %Pcue1"/>
+					</button>
+					<button action="bs" query="hot_cue 1" >
+						<pos x="+5" y="+20+25" />
+						<size width="110" height="30"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format=""/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="T: %Pfromcue1 B: %Bfromcue1\n%namecue1"/>
+					</button>
+					<button class="largepad" action="hot_cue 2" rightclick="delete_cue 2">
+						<Tooltip>HOTCUE 2</tooltip>
+						<pos x="+5+113" y="+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="2"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="2   %Pcue2"/>
+					</button>
+					<button action="bs" query="hot_cue 2" >
+						<pos x="+5+113" y="+20+25" />
+						<size width="110" height="30"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format=""/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="T: %Pfromcue2 B: %Bfromcue2\n%namecue2"/>
+					</button>
+					<button class="largepad" action="hot_cue 3" rightclick="delete_cue 3">
+						<Tooltip>HOTCUE 3</tooltip>
+						<pos x="+5" y="+20+66" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="3"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="3   %Pcue3"/>
+					</button>
+					<button action="bs" query="hot_cue 3" >
+						<pos x="+5" y="+20+66+25" />
+						<size width="110" height="30"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format=""/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="T: %Pfromcue3 B: %Bfromcue3\n%namecue3"/>
+					</button>
+					<button class="largepad" action="hot_cue 4" rightclick="delete_cue 4">
+						<Tooltip>HOTCUE 4</tooltip>
+						<pos x="+5+113" y="+20+66" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="4"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="4   %Pcue4"/>
+					</button>				
+					<button action="bs" query="hot_cue 4" >
+						<pos x="+5+113" y="+20+66+25" />
+						<size width="110" height="30"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format=""/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="T: %Pfromcue4 B: %Bfromcue1\n%namecue4"/>
+					</button>
+
+				</group>
+				
+			</panel>
+		
+
+				--- SAMPLES  -----
+			<panel name="SAMPLEmodeR" x="20+1322" y="228" visible="var 'padvar' 1">
+				
+				<group name="Loops" x="+0" y="+0">
+					<button action="bs" class="panelbar" >
+						<Tooltip>LOOPS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="LOOPS"/>
+					</button>
+					<button class="smallpad" action="loop_in">
+						<Tooltip>Set LOOP IN point</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="IN"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="IN"/>
+					</button>
+					<button class="smallpad" action="loop_out" query="loop ? blink : loop_out">
+						<Tooltip>Set LOOP OUT point</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="OUT"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="OUT"/>
+					</button>
+					<button class="smallpad" action="loop">
+						<Tooltip>LOOP</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="%loop"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="%loop"/>
+					</button>
+					<button class="smallpad" action="reloop" >
+						<Tooltip>Re-Loop</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="REL"/>
+						<textselected dx="3" width="50" font="Arial" align="center" size="14" weight="bold" color="white" format="REL"/>
+					</button>
+				</group>
+					
+				<group name="FXs" x="+0" y="+45">	
+				
+					<button action="bs" class="panelbar" >
+						<Tooltip>EFFECTS</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="EFFECTS"/>
+					</button>
+					<button class="smallpad" action="effect_active 1" rightclick="effect 1 select">
+						<Tooltip>Effect SLOT 1\nRight-click to Select an Effect</tooltip>
+						<pos x="+0" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 1 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 1 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 2" rightclick="effect 2 select">
+						<Tooltip>Effect SLOT 2\nRight-click to Select an Effect</tooltip>
+						<pos x="+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 2 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 2 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 3" rightclick="effect 3 select">
+						<Tooltip>Effect SLOT 3\nRight-click to Select an Effect</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 3 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 3 & param_uppercase"/>
+					</button>
+					<button class="smallpad" action="effect_active 4" rightclick="effect 4 select">
+						<Tooltip>Effect SLOT 4\nRight-click to Select an Effect</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_name 4 & param_uppercase"/>
+						<textselected dx="3" width="52" font="Arial" align="center" size="14" weight="bold" color="white" action="get_effect_name 4 & param_uppercase"/>
+					</button>				
+
+					
+					
+				</group>
+
+				<group name="SAMPLESsamr" x="+0" y="+90">
+					<button action="bs" query="on" class="panelbar" >
+						<Tooltip>SAMPLES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="white" format="SAMPLES"/>
+					</button>
+					
+					<button action="sampler_bank">
+						<pos x="+35" y="+20" />
+						<size width="152" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="BANK : `get_sampler_bank`"/>
+					</button>	
+					
+					<button class="largepad" action="param_bigger get_sampler_count 5 ? sampler_pad 1 : sampler_pad 5" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 1 : sampler_stop 5">
+						<Tooltip>SLOT 1</tooltip>
+						<pos x="+5" y="+20+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 1 : get_sample_name 5"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 1 : get_sample_name 5"/>
+					</button>
+					<visual class="samplerpos" source="param_bigger get_sampler_count 5 ? sampler_position 1 : sampler_position 5" visibility="param_bigger get_sampler_count 5 ? sampler_loaded 1 : sampler_loaded 5" >
+						<pos x="+8" y="+20+25+20"/>
+					</visual>
+					<button action="bs" visibility="param_bigger get_sampler_count 5 ? sampler_loaded 1 : sampler_loaded 5" >
+						<Tooltip></Tooltip>
+						<pos x="+11" y="+20+35+20" />
+						<size width="30" height="15"/>
+						<text font="Arial" align="left" size="14" weight="bold" color="#A6A8A8" format="VOL :"/>
+					</button>
+					<slider class="samplervol" action="param_bigger get_sampler_count 5 ? sampler_volume_nogroup 1 : sampler_volume_nogroup 5" visibility="param_bigger get_sampler_count 5 ? sampler_loaded 1 : sampler_loaded 5" >
+						<pos x="+11+35" y="+20+35+20"/>
+						<fader>
+							<pos x="10" y="10"/>
+							<size width="1" height="10"/>
+						</fader>
+					</slider>
+					<textzone visibility="param_bigger get_sampler_count 5 ? sampler_loaded 1 : sampler_loaded 5" >
+						<pos x="+11+35" y="+20+35+20" />
+						<size width="52" height="14"/>
+						<text font="Arial" align="center" size="13" weight="bold" color="white" format="`param_bigger get_sampler_count 5 ? sampler_volume_nogroup 1 & param_cast 'percentage' : sampler_volume_nogroup 5 & param_cast 'percentage'`"/>
+					</textzone>
+					
+					<button class="largepad" action="param_bigger get_sampler_count 5 ? sampler_pad 2 : sampler_pad 6" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 2 : sampler_stop 6">
+						<Tooltip>SLOT 2</tooltip>
+						<pos x="+5+113" y="+20+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 2 : get_sample_name 6"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 2 : get_sample_name 6"/>
+					</button>
+					<visual class="samplerpos" source="param_bigger get_sampler_count 5 ? sampler_position 2 : sampler_position 6" visibility="param_bigger get_sampler_count 5 ? sampler_loaded 2 : sampler_loaded 6" >
+						<pos x="+8+113" y="+20+25+20"/>
+					</visual>
+					<button action="bs" visibility="param_bigger get_sampler_count 5 ? sampler_loaded 2 : sampler_loaded 6" >
+						<Tooltip></Tooltip>
+						<pos x="+11+113" y="+20+35+20" />
+						<size width="30" height="15"/>
+						<text font="Arial" align="left" size="14" weight="bold" color="#A6A8A8" format="VOL :"/>
+					</button>
+					<slider class="samplervol" action="param_bigger get_sampler_count 5 ? sampler_volume_nogroup 2 : sampler_volume_nogroup 6" visibility="param_bigger get_sampler_count 5 ? sampler_loaded 2 : sampler_loaded 6" >
+						<pos x="+11+35+113" y="+20+35+20"/>
+						<fader>
+							<pos x="10" y="10"/>
+							<size width="1" height="10"/>
+						</fader>
+					</slider>
+					<textzone visibility="param_bigger get_sampler_count 5 ? sampler_loaded 2 : sampler_loaded 6" >
+						<pos x="+11+35+113" y="+20+35+20" />
+						<size width="52" height="14"/>
+						<text font="Arial" align="center" size="13" weight="bold" color="white" format="`param_bigger get_sampler_count 5 ? sampler_volume_nogroup 2 & param_cast 'percentage' : sampler_volume_nogroup 6 & param_cast 'percentage'`"/>
+					</textzone>			
+					
+					<button class="largepad" action="param_bigger get_sampler_count 5 ? sampler_pad 3 : sampler_pad 7" rightclick="param_bigger get_sampler_count 5 ? param_bigger get_sampler_count 5 ? sampler_stop 3 : sampler_stop 7">
+						<Tooltip>SLOT 3</tooltip>
+						<pos x="+5" y="+20+55+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 3 : get_sample_name 7"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 3 : get_sample_name 7"/>
+					</button>
+					<visual class="samplerpos" source="param_bigger get_sampler_count 5 ? sampler_position 3 : sampler_position 7" visibility="param_bigger get_sampler_count 5 ? sampler_loaded 3 : sampler_loaded 7" >
+						<pos x="+8" y="+20+25+55+20"/>
+					</visual>
+					<button action="bs" visibility="param_bigger get_sampler_count 5 ? sampler_loaded 3 : sampler_loaded 7" >
+						<Tooltip></Tooltip>
+						<pos x="+11" y="+20+35+55+20" />
+						<size width="30" height="15"/>
+						<text font="Arial" align="left" size="14" weight="bold" color="#A6A8A8" format="VOL :"/>
+					</button>
+					<slider class="samplervol" action="param_bigger get_sampler_count 5 ? sampler_volume_nogroup 3 : sampler_volume_nogroup 7" visibility="param_bigger get_sampler_count 5 ? sampler_loaded 3 : sampler_loaded 7" >
+						<pos x="+11+35" y="+20+35+55+20"/>
+						<fader>
+							<pos x="10" y="10"/>
+							<size width="1" height="10"/>
+						</fader>
+					</slider>
+					<textzone visibility="param_bigger get_sampler_count 5 ? sampler_loaded 3 : sampler_loaded 7" >
+						<pos x="+11+35" y="+20+35+55+20" />
+						<size width="52" height="14"/>
+						<text font="Arial" align="center" size="13" weight="bold" color="white" format="`param_bigger get_sampler_count 5 ? sampler_volume_nogroup 3 & param_cast 'percentage' : sampler_volume_nogroup 7 & param_cast 'percentage'`"/>
+					</textzone>
+					
+					<button class="largepad" action="param_bigger get_sampler_count 5 ? sampler_pad 4 : sampler_pad 8" rightclick="param_bigger get_sampler_count 5 ? sampler_stop 4 : sampler_stop 8">
+						<Tooltip>SLOT 4</tooltip>
+						<pos x="+5+113" y="+20+55+20" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="param_bigger get_sampler_count 5 ? get_sample_name 4 : get_sample_name 8"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="param_bigger get_sampler_count 5 ? get_sample_name 4 : get_sample_name 8"/>
+					</button>
+					<visual class="samplerpos" source="param_bigger get_sampler_count 5 ? sampler_position 4 : sampler_position 8" visibility="param_bigger get_sampler_count 5 ? sampler_loaded 4 : sampler_loaded 8" >
+						<pos x="+8+113" y="+20+25+55+20"/>
+					</visual>
+					<button action="bs" visibility="param_bigger get_sampler_count 5 ? sampler_loaded 4 : sampler_loaded 8" >
+						<Tooltip></Tooltip>
+						<pos x="+11+113" y="+20+35+55+20" />
+						<size width="30" height="15"/>
+						<text font="Arial" align="left" size="14" weight="bold" color="#A6A8A8" format="VOL :"/>
+					</button>
+					<slider class="samplervol" action="param_bigger get_sampler_count 5 ? sampler_volume_nogroup 4 : sampler_volume_nogroup 8" visibility="param_bigger get_sampler_count 5 ? sampler_loaded 4 : sampler_loaded 8" >
+						<pos x="+11+35+113" y="+20+35+55+20"/>
+						<fader>
+							<pos x="10" y="10"/>
+							<size width="1" height="10"/>
+						</fader>
+					</slider>
+					<textzone visibility="param_bigger get_sampler_count 5 ? sampler_loaded 4 : sampler_loaded 8" >
+						<pos x="+11+35+113" y="+20+35+55+20" />
+						<size width="52" height="14"/>
+						<text font="Arial" align="center" size="13" weight="bold" color="white" format="`param_bigger get_sampler_count 5 ? sampler_volume_nogroup 4 & param_cast 'percentage' : sampler_volume_nogroup 8 & param_cast 'percentage'`"/>
+					</textzone>		
+
+				</group>
+				
+				<group name="CUES" x="+0" y="+246">
+					<button action="bs" class="panelbar" >
+						<Tooltip>HOTCUES</tooltip>
+						<pos x="+0" y="+0" />
+						<text font="Arial" align="center" size="12" weight="bold" color="#A6A8A8" format="HOTCUES"/>
+					</button>
+					<button class="smallpad" action="hot_cue 1" rightclick="delete_cue 1">
+						<Tooltip>HOTCUE 1</tooltip>
+						<pos x="+0" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="1"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="1"/>
+					</button>
+					<button class="smallpad" action="hot_cue 2" rightclick="delete_cue 2">
+						<Tooltip>HOTCUE 2</tooltip>
+						<pos x="+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="2"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="2"/>
+					</button>
+					<button class="smallpad" action="hot_cue 3" rightclick="delete_cue 3">
+						<Tooltip>HOTCUE 3</tooltip>
+						<pos x="+60+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="3"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="3"/>
+					</button>
+					<button class="smallpad" action="hot_cue 4" rightclick="delete_cue 4">
+						<Tooltip>HOTCUE 4</tooltip>
+						<pos x="+60+60+60" y="+16" />
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="4"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" format="4"/>
+					</button>
+				</group>
+				
+			</panel>	
+
+			</deck>
+		
+	<group name="leftcustoms" x="567" y="295">
+		<textzone >
+			<pos x="+0" y="-20" />
+			<size width="35" height="14"/>
+			<up x="+0" y="+0"/>
+			<text font="arial" size="12" align="center" color="#9D9E9E"  weight="bold" format="CUSTOM" scroll="no"/>
+		</textzone>	
+		<button class="mixerbutton" action="custom_button 1" rightclick="custom_button_edit 1" >
+			<tooltip>User Custom Button 1\n Right click to set it to do any action you want</tooltip>
+			<pos x="+0" y="+0"/>
+			<text dx="3" width="28" action="custom_button_name 1" />
+			<textselected dx="3" width="28" action="custom_button_name 1" />
+		</button>
+		<button class="mixerbutton" action="custom_button 2" rightclick="custom_button_edit 2" >
+			<tooltip>User Custom Button 2\n Right click to set it to do any action you want</tooltip>
+			<pos x="+0" y="+35"/>
+			<text dx="3" width="28" action="custom_button_name 2" />
+			<textselected dx="3" width="28" action="custom_button_name 2" />
+		</button>
+		<button class="mixerbutton" action="custom_button 3" rightclick="custom_button_edit 3" >
+			<tooltip>User Custom Button 3\n Right click to set it to do any action you want</tooltip>
+			<pos x="+0" y="+35+35"/>
+			<text dx="3" width="28" action="custom_button_name 3" />
+			<textselected dx="3" width="28" action="custom_button_name 3" />
+		</button>
+		<button class="mixerbutton" action="custom_button 4" rightclick="custom_button_edit 4" >
+			<tooltip>User Custom Button 4\n Right click to set it to do any action you want</tooltip>
+			<pos x="+0" y="+35+35+35"/>
+			<text dx="3" width="28" action="custom_button_name 4" />
+			<textselected dx="3" width="28" action="custom_button_name 4" />
+		</button>
+</group>
+
+	<group name="rightcustoms" x="997" y="295">
+		<textzone >
+			<pos x="+0" y="-20" />
+			<size width="35" height="14"/>
+			<up x="+0" y="+0"/>
+			<text font="arial" size="12" align="center" color="#9D9E9E"  weight="bold" format="CUSTOM" scroll="no"/>
+		</textzone>	
+		<button class="mixerbutton" action="custom_button 6" rightclick="custom_button_edit 6" >
+			<tooltip>User Custom Button 6\n Right click to set it to do any action you want</tooltip>
+			<pos x="+0" y="+0"/>
+			<text dx="3" width="28" action="custom_button_name 6" />
+			<textselected dx="3" width="28" action="custom_button_name 6" />
+		</button>
+		<button class="mixerbutton" action="custom_button 7" rightclick="custom_button_edit 7" >
+			<tooltip>User Custom Button 7\n Right click to set it to do any action you want</tooltip>
+			<pos x="+0" y="+35"/>
+			<text dx="3" width="28" action="custom_button_name 7" />
+			<textselected dx="3" width="28" action="custom_button_name 7" />
+		</button>
+		<button class="mixerbutton" action="custom_button 8" rightclick="custom_button_edit 8" >
+			<tooltip>User Custom Button 8\n Right click to set it to do any action you want</tooltip>
+			<pos x="+0" y="+35+35"/>
+			<text dx="3" width="28" action="custom_button_name 8" />
+			<textselected dx="3" width="28" action="custom_button_name 8" />
+		</button>
+		<button class="mixerbutton" action="custom_button 9" rightclick="custom_button_edit 9" >
+			<tooltip>User Custom Button 9\n Right click to set it to do any action you want</tooltip>
+			<pos x="+0" y="+35+35+35"/>
+			<text dx="3" width="28" action="custom_button_name 9" />
+			<textselected dx="3" width="28" action="custom_button_name 9" />
+		</button>
+</group>
+				
+	******* CENTER PANELS ******
+
+	<button class="mixerbutton" action="skin_panel 'video' on" query="on" visibility="skin_panel 'mixer' on">
+		<Tooltip>Show Video Mixer</tooltip>
+		<pos x="783" y="125" />
+		<text size="12" format="AUDIO"/>
+		<textselected size="12" format="AUDIO"/>
+	</button>
+	<button class="mixerbutton" action="skin_panel 'mixer' on"  query="on" visibility="skin_panel 'video' on">
+		<Tooltip>Show Audio Mixer</tooltip>
+		<pos x="783" y="125" />
+		<text size="12" format="VIDEO"/>
+		<textselected size="12" format="VIDEO"/>
+	</button>
+	<button action="deck left get hastimecode ? deck left timecode_bypass : deck left get hasmic ? deck left linein 'mic' : deck left linein" class="mixerbutton">
+		<pos x="626" y="127" />
+		<text format="SRC"/>
+		<textselected format="SRC"/>
+	</button>
+	<button action="deck right get hastimecode ? deck right timecode_bypass : deck right get hasmic ? deck right linein 'mic' : deck right linein" class="mixerbutton">
+		<pos x="937" y="127" />
+		<text format="SRC"/>
+		<textselected format="SRC"/>
+	</button>	
+
+
+	
+	<panel name="mixer" group="center" visible="yes">
+
+		<visual >
+			<Tooltip></Tooltip>
+			<pos x="610" y="174-6" />
+			<size width="382" height="318"/>
+			<off x="610" y="1568"/>
+		</visual>
+		
+		<button action="deck left vinyl_mode & deck right vinyl_mode" class="mixerbutton">
+			<pos x="783" y="164" />
+			<text format="VINYL"/>
+			<textselected format="VINYL"/>
+		</button>
+
+		<deck deck="left">
+			<button class="mixerbutton" action="pfl" >
+				<pos x="718" y="353" />
+				<text format="PFL"/>
+				<textselected format="PFL"/>
+			</button>
+			<button class="mixerbutton" action="load" rightclick="unload">
+				<Tooltip>Click to Load the selected track to the deck\nRightclick to unload</Tooltip>
+				<pos x="762" y="353" />
+				<text format="LOAD"/>
+				<textselected format="LOAD"/>
+			</button>
+			
+			<slider class="roundknob" action="gain" ><pos x="713" y="129" /></slider>
+			<slider class="roundknob" action="eq_high" dblclick="eq_high 50%"><pos x="736" y="191"/></slider>
+			<slider class="roundknob" action="eq_mid" dblclick="eq_mid 50%"><pos x="736" y="244"/></slider>
+			<slider class="roundknob" action="eq_low" dblclick="eq_low 50%"><pos x="736" y="297" /></slider>
+
+			<button class="mixerbutton" action="eq_kill_high">
+				<pos x="697" y="204" />
+				<text format="KILL"/>
+				<textselected format="KILL"/>
+			</button>
+			<button class="mixerbutton" action="eq_kill_mid">
+				<pos x="697" y="257" />
+				<text format="KILL"/>
+				<textselected format="KILL"/>
+			</button>
+			<button class="mixerbutton" action="eq_kill_low">
+				<pos x="697" y="310" />
+				<text format="KILL"/>
+				<textselected format="KILL"/>
+			</button>		
+			
+			<slider class="volumeslider"><pos x="703" y="378" /></slider>
+			
+			<visual class="vumeter"><pos x="694" y="380" />	</visual>
+			
+			<scratchwave orientation="vertical" color="#4D7E2E" >
+				<pos x="615" y="171" />
+				<size width="62" height="312"/>
+				 <overlay><pos x="+0" y="+0" width="62" height="312"/><background x="615" y="1066"/></overlay>
+			 </scratchwave>
+			 
+		</deck>
+		
+		<deck deck="right">
+
+			<button class="mixerbutton" action="pfl" >
+				<pos x="849" y="353" />
+				<text format="PFL"/>
+				<textselected format="PFL"/>
+			</button>
+			<button class="mixerbutton" action="load" rightclick="unload">
+				<Tooltip>Click to Load the selected track to the deck\nRightclick to unload</Tooltip>
+				<pos x="806" y="353" />
+				<text format="LOAD"/>
+				<textselected format="LOAD"/>
+			</button>
+
+			<slider class="roundknob" action="gain" ><pos x="840" y="129" /></slider>
+			<slider class="roundknob" action="eq_high" dblclick="eq_high 50%"><pos x="817" y="191" /></slider>
+			<slider class="roundknob" action="eq_mid" dblclick="eq_mid 50%"><pos x="817" y="244"/></slider>
+			<slider class="roundknob" action="eq_low" dblclick="eq_low 50%"><pos x="817" y="297" /></slider>
+
+			<button class="mixerbutton" action="eq_kill_high">
+				<pos x="868" y="204" />
+				<text format="KILL"/>
+				<textselected format="KILL"/>
+			</button>
+			<button class="mixerbutton" action="eq_kill_mid">
+				<pos x="868" y="257" />
+				<text format="KILL"/>
+				<textselected format="KILL"/>
+			</button>
+			<button class="mixerbutton" action="eq_kill_low">
+				<pos x="868" y="310" />
+				<text format="KILL"/>
+				<textselected format="KILL"/>
+			</button>	
+			
+			<slider class="volumeslider"><pos x="855" y="378" /></slider>
+			
+			<visual class="vumeter"><pos x="895" y="380" />	</visual>
+
+			<scratchwave orientation="vertical" color="#C86C1D">
+				<pos x="925" y="171" />
+				<size width="62" height="312"/>
+				 <overlay><pos x="+0" y="+0" width="62" height="312"/><background x="615" y="1066"/></overlay>
+			 </scratchwave>
+	 
+			 
+	</deck>		
+			
+
+
+
+		<slider action="crossfader" orientation="horizontal" dblclick="crossfader 50%" >
+			<pos x="754" y="445" />
+			<size width="94" height="48"/>
+			<on x="249" y="1184"/>
+			<off x="249" y="1254"/>
+			<fader>
+				<size width="15" height="40"/>
+				<pos x="400" y="1826"/>
+			</fader>
+		</slider>
+		
+	</panel>
+
+	<panel name="video" group="center" visible="no">
+		<visual >
+			<Tooltip></Tooltip>
+			<pos x="606" y="155" />
+			<size width="392" height="272"/>
+			<off x="926" y="935"/>
+		</visual>
+
+		<video source="master">
+			 <pos x="669" y="272"/>
+			<size width="264" height="148"/>
+		</video>
+		<button action="video" rightclick="video_output on ? video_output off : video_output on" >
+			<tooltip>Enable-disable Video\nRightclick to enable-disable Video Output</tooltip>
+			 <pos x="669" y="272"/>
+			<size width="264" height="148"/>
+		</button>
+		<video source="deck" deck="1">
+			 <pos x="610" y="159"/>
+			 <size width="188" height="106"/>
+		</video>
+		<video source="deck" deck="2">
+			 <pos x="805" y="159"/>
+			 <size width="188" height="106"/>
+		</video>
+		<button action="deck 1 video_transition">
+			<tooltip>Left Video Transition</tooltip>
+			 <pos x="610" y="159"/>
+			 <size width="188" height="106"/>
+		</button>
+		<button action="deck 2 video_transition">
+			<tooltip>Right Video Transition</tooltip>
+			 <pos x="805" y="159"/>
+			 <size width="188" height="106"/>
+		</button>
+
+
+		<deck deck="left">
+			<slider class="volumeslider"><pos x="622" y="2683-2373" /></slider>
+			<visual class="vumeter"><pos x="613" y="2683-2373" />	</visual>
+			<button class="mixerbutton" action="pfl" >
+				<pos x="619" y="2650-2373" />
+				<text format="PFL"/>
+				<textselected format="PFL"/>
+			</button>
+		</deck>
+		<deck deck="right">
+			<slider class="volumeslider"><pos x="943" y="2683-2373" /></slider>
+			<visual class="vumeter"><pos x="982" y="2683-2373" />	</visual>
+			<button class="mixerbutton" action="pfl" >
+				<pos x="948" y="2650-2373" />
+				<text format="PFL"/>
+				<textselected format="PFL"/>
+			</button>
+		</deck>	
+
+			<group name="vidtrans" x="613" y="430">
+					<button class="largepad" action="video_transition" rightclick="video_transition_select">
+						<Tooltip>VIDEO TRANSITION\nRight-click to Select</tooltip>
+						<pos x="+5" y="+20"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_videotrans_name & param_uppercase"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="get_videotrans_name & param_uppercase"/>
+					</button>
+					<slider class="fxslider" action="video_transition_slider 1" orientation="horizontal">
+						<pos x="+12" y="+46"/>
+					</slider>
+					<textzone >
+						<pos x="+12" y="+44+12" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 'transition' 1"/>
+					</textzone>
+					<slider class="fxslider" action="video_transition_slider 2" orientation="horizontal">
+						<pos x="+12+49" y="+46"/>
+					</slider>
+					<textzone >
+						<pos x="+12+49" y="+44+12" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="get_effect_slider_label 'transition' 2"/>
+					</textzone>
+			</group>		
+			<group name="vidfx" x="870" y="430">	
+					<button class="largepad" action="deck master video_fx" rightclick="deck master video_fx_select">
+						<Tooltip>VIDEO EFFECT\nRight-click to Select</tooltip>
+						<pos x="+5" y="+20"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="deck master get_effect_name 'video' 1 & param_uppercase"/>
+						<textselected font="Arial" align="center" size="14" weight="bold" color="white" action="deck master get_effect_name 'video'  1 & param_uppercase"/>
+					</button>
+					<slider class="fxslider" action="deck master video_fx_slider 1" orientation="horizontal">
+						<pos x="+12" y="+46"/>
+					</slider>
+					<textzone >
+						<pos x="+12" y="+44+12" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="deck master get_effect_slider_label 'video' 1"/>
+					</textzone>
+					<slider class="fxslider" action="deck master video_fx_slider 2" orientation="horizontal">
+						<pos x="+12+49" y="+46"/>
+					</slider>
+					<textzone >
+						<pos x="+12+49" y="+44+12" />
+						<size width="44" height="14"/>
+						<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" action="deck master get_effect_slider_label 'video' 2"/>
+					</textzone>
+			</group>
+					
+
+		<button class="lock" action="video_crossfader_auto">
+			<pos x="629" y="421"/>
+		</button>
+		<textzone >
+			<pos x="653" y="428" />
+			<size width="44" height="14"/>
+			<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="AUTO"/>
+		</textzone>
+		<button class="lock" action="video_crossfader_link">
+			<pos x="964" y="421"/>
+		</button>
+		<textzone >
+			<pos x="920" y="428" />
+			<size width="44" height="14"/>
+			<text font="Arial" align="center" size="14" weight="bold" color="#A6A8A8" format="LINK"/>
+		</textzone>
+		
+
+		<slider action="crossfader" orientation="horizontal" dblclick="crossfader 50%" >
+			<pos x="754" y="445" />
+			<size width="94" height="24"/>
+			<on x="249" y="1184"/>
+			<off x="249" y="1254"/>
+			<fader>
+				<size width="15" height="24"/>
+				<pos x="400" y="1822"/>
+			</fader>
+		</slider>
+		<slider action="video_crossfader" orientation="horizontal" dblclick="video_crossfader 50%" >
+			<pos x="754" y="445+25" />
+			<size width="94" height="24"/>
+			<on x="249" y="1184+24"/>
+			<off x="249" y="1254+24"/>
+			<fader>
+				<size width="15" height="24"/>
+				<pos x="400+30" y="1822+24"/>
+			</fader>
+		</slider>	
+
+
+
+
+	</panel>
+
+</panel>
+
+<!-- MINIDECKS-->
+<panel name="largebrowser" visibility="var '$browsersize' 1">
+
+	<visual type="color" source="constant 'black'">
+		<Tooltip></Tooltip>
+		<pos x="28" y="34" />
+		<size width="1545" height="100"/>
+	</visual>
+	<visual >
+		<Tooltip></Tooltip>
+		<pos x="680" y="36" />
+		<size width="240" height="96"/>
+		<off x="680" y="155"/>
+	</visual>
+	<visual visibility="skin_panel 'video' on">
+		<Tooltip></Tooltip>
+		<pos x="700" y="38" />
+		<size width="201" height="58"/>
+		<off x="1304+50" y="1066"/>
+	</visual>
+
+
+	<deck deck="left">
+
+		<group name="leftinfo" x="28" y="130-94">
+			<songpos colorPlayed="#23c034" colorBass="#007a19" colorMed="#23c034" colorHigh="#7fe997" >
+				<pos x="+2" y="+63" />
+				<size width="559" height="31"/>
+				<cues>
+					<size width="2" height="31"/>
+					<up x="521" y="941"/>
+					<over x="551" y="941"/>
+				</cues>
+			 </songpos>
+			 <visual type="color" source="constant 'black'" visibility="var '@$showcues' 2">
+				<Tooltip></Tooltip>
+				<pos x="+2" y="+63+18" />
+				<size width="559" height="13"/>
+			</visual>
+			 <visual type="linear" orientation="horizontal" direction="right" source="song_pos" visibility="var '@$showcues' 2">
+				<Tooltip></Tooltip>
+				<pos x="+2" y="+63+19" />
+				<size width="559" height="2"/>
+				<off x="875" y="1237"/>
+				<on x="875" y="1247"/>
+			</visual>
+			
+			<panel name="cuespos" x="+0" y="+0" visibility="not var '@$showcues' 0" >		 
+				<slider action="cue_pos 1" visibility="automix ? false : hot_cue 1">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="270" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 2" visibility="automix ? false : hot_cue 2">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="290" y="1011"/>
+						</fader>
+				</slider>
+					<slider action="cue_pos 3" visibility="automix ? false : hot_cue 3">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="310" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 4" visibility="automix ? false : hot_cue 4">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="330" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 5" visibility="automix ? false : hot_cue 5">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="350" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 6" visibility="automix ? false : hot_cue 6">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="370" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 7" visibility="automix ? false : hot_cue 7">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="390" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 8" visibility="automix ? false : hot_cue 8">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="410" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 9" visibility="automix ? false : hot_cue 9">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="430" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 10" visibility="automix ? false : hot_cue 10">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="450" y="1011"/>
+						</fader>
+				</slider>
+			</panel>
+				
+				
+			<dropzone >
+				<pos x="+0" y="-4" />
+				<size width="610" height="100"/>
+			</dropzone>
+
+			<panel name="TextsLeft" visibility="not var '@$showcover' 1">
+				<textzone >
+					<pos x="+3" y="+0" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="ARTIST" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3" y="+23" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="TITLE" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3" y="+48" />
+					<size width="47" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="COMMENT" scroll="no"/>
+				</textzone>
+				
+				<textzone >
+					<pos x="+40" y="-1" />
+					<size width="377" height="22"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="22" color="#75B94E"  format="%Author" scroll="no"/>
+					<text2 font="arial" size="22" color="#75B94E" format="%Author" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+40" y="+23" />
+					<size width="377" height="18"/>
+					<up x="+0" y="+0"/>
+						<text font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="no"/>
+					<text2 font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+54" y="+45" />
+					<size width="172" height="18"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="15" color="#d1d3d4"  align="left" format="`get loaded_song 'comment'`" scroll="yes"/>
+				 </textzone>
+			</panel>
+			<panel name="TextsLeftCover" visibility="var '@$showcover' 1">
+				<cover>
+					<pos x="+0" y="-3" />
+					<size width="65" height="65"/>		
+				</cover>
+				<textzone >
+					<pos x="+3+65" y="+0" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="ARTIST" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3+65" y="+23" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="TITLE" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3+65" y="+48" />
+					<size width="47" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="COMMENT" scroll="no"/>
+				</textzone>
+				
+				<textzone >
+					<pos x="+40+65" y="-1" />
+					<size width="377-65" height="22"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="22" color="#75B94E"  format="%Author" scroll="no"/>
+					<text2 font="arial" size="22" color="#75B94E" format="%Author" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+40+65" y="+23" />
+					<size width="377-65" height="18"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="no"/>
+					<text2 font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+54+65" y="+45" />
+					<size width="172-65" height="18"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="15" color="#d1d3d4"  align="left" format="`get loaded_song 'comment'`" scroll="yes"/>
+				 </textzone>
+			</panel>
+
+			<group name="othertexts" >
+				<textzone >
+					<pos x="+420" y="+8" />
+					<size width="45" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="REMAIN" scroll="no"/>
+				</textzone>	
+				<textzone >
+					<pos x="+420" y="+35" />
+					<size width="45" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="ELAPSED" scroll="no"/>
+				</textzone>	
+				<textzone >
+					<pos x="+467" y="+31" />
+					<size width="90" height="22"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="24" color="#75B94E" align="left" format="%Pspent"/>
+				</textzone>
+				<button action="bs" query="songpos_remain 30000ms ? blink 800ms : on">
+					<Tooltip></Tooltip>
+					<pos x="+467" y="+3" />
+					<size width="90" height="22"/>
+					<text font="arial" size="24" color="#9D9E9E" align="left" format="%Pleft"/>
+					<textselected font="arial" size="24" color="#FFFFFF" align="left" format="%Pleft"/>
+				</button> 
+				
+				<textzone >
+					<pos x="+231" y="+48" />
+					<size width="23" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="KEY" scroll="no"/>
+				</textzone>	
+				<textzone >
+					<pos x="+318" y="+48" />
+					<size width="26" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="GAIN" scroll="no"/>
+				</textzone>	
+				
+				<textzone >
+					<pos x="+254" y="+45" />
+					<size width="60" height="16"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="16" color="#FFFFFF" align="center" format="%Pkey/%Pcamelot"/>
+				</textzone>
+				<textzone >
+					<pos x="+344" y="+45" />
+					<size width="65" height="16"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="16" color="#FFFFFF" align="left" format="%Plevel db"/>
+				</textzone>
+				
+				<button action="file_info" class="infoicon">
+					<pos x="+550" y="+0" />
+				</button>	
+				<button action="setting 'hideSonginfo'" class="eyeicon">
+					<pos x="+547" y="+22" />
+				</button>
+				 <menu class="optionsicon">
+					<tooltip>DeckOptions</tooltip>
+					<pos x="+547" y="+40" />
+					<submenu text="Track Cover">
+						<item text="No Cover" action="set '@$showcover' 0" check="var '@$showcover' 0"/>
+						<item text="Cover on Deck" action="set '@$showcover' 1" check="var '@$showcover' 1"/>
+						<item text="Cover on Jogwheel" action="set '@$showcover' 2" check="var '@$showcover' 2"/>
+					</submenu>
+					<submenu text="Track Progress bar Style">
+						<item text="Default" action="set '@$showcues' 0" check="var '@$showcues' 0"/>	
+						<item text="Cue Markers" action="set '@$showcues' 1" check="var '@$showcues' 1"/>	
+						<item text="Pioneer style" action="set '@$showcues' 2" check="var '@$showcues' 2"/>	
+					</submenu>
+					<submenu text="Track Progress bar Color">
+						<item text="Monochrome" action="setting 'ColoredWaveforms' 'monochrome'" check="setting 'ColoredWaveforms' 'monochrome'"/>	
+						<item text="Neutral" action="setting 'ColoredWaveforms' 'neutral'" check="setting 'ColoredWaveforms' 'neutral'"/>	
+						<item text="Infra-red" action="setting 'ColoredWaveforms' 'infra-red'" check="setting 'ColoredWaveforms' 'infra-red'"/>	
+						 <item text="Per-deck" action="setting 'ColoredWaveforms' 'per-deck'" check="setting 'ColoredWaveforms' 'per-deck'"/>	
+						<item text="Ultra-blue" action="setting 'ColoredWaveforms' 'ultra-blue'" check="setting 'ColoredWaveforms' 'ultra-blue'"/>	
+					</submenu>
+				</menu>
+			</group>
+		</group>
+			
+		<group name="lefttempoinfo" x="710-130" y="130-94">		
+			<textzone >
+				<pos x="+25" y="+0" />
+				<size width="62" height="22"/>
+				<up x="+0" y="+0"/>
+				<text font="arial" size="22" color="#75B94E" align="right"  format="%Pbpmex"/>
+			</textzone>
+			<textzone >
+				<pos x="+29" y="+20" />
+				<size width="57" height="20"/>
+				<up x="+0" y="+0"/>
+				<text font="arial" size="18" color="#FFFFFF" align="right" format="%Ppitch"/>
+			</textzone>
+			<button action="pitch_range" value="+1" rightclick="-2">
+				<pos x="+33" y="+40" />
+				<size width="50" height="12"/>
+				<text dx="0" dy="0" width="43" font="ARIAL" size="14" color="white" align="center" format="%pitchrange%%"/>
+				<up x="+0" y="+0"/>
+			</button>
+		</group>
+
+			<group name="Controlleft" x="592" y="104">
+				<button class="mixerbutton" action="play_pause" query="loaded ? play ? on : blink : off" rightclick="reverse">
+					<tooltip>Play Pause / Rightclick to play in reverse</tooltip>
+					<pos x="+45" y="+0" />
+					<text format="PLAY"/>
+					<textselected format="PLAY"/>
+				</button>
+				<button class="mixerbutton" action="cue_stop" query="loaded ? pause ? cue ? on : blink : off : off" rightclick="stop">
+					<tooltip>Cue Stop / Rightclick to Stop</tooltip>
+					<pos x="+5" y="+0" />
+					<text format="CUE"/>
+					<textselected format="CUE"/>
+				</button>
+			</group>
+			<panel name="minimixer" x="690" y="35" visibility="skin_panel 'mixer' on">			
+				<slider class="volumeslider"><pos x="+10" y="+0" /></slider>
+				<visual class="vumeter"><pos x="+0" y="+2" />	</visual>
+				<button class="mixerbutton" action="pfl" >
+					<pos x="+60" y="+12" />
+					<text format="PFL"/>
+					<textselected format="PFL"/>
+				</button>
+			</panel>
+			<panel name="minivideomixer" x="690" y="35" visibility="skin_panel 'video' on">			
+				<visual class="vumeter"><pos x="-4" y="+2" />	</visual>
+				<video source="deck" >
+					 <pos x="+13" y="+6"/>
+					 <size width="94" height="53"/>
+				</video>
+				<button class="mixerbutton" action="pfl" >
+					<pos x="+13" y="+69" />
+					<text format="PFL"/>
+					<textselected format="PFL"/>
+				</button>
+			</panel>
+	</deck>
+
+
+	<deck deck="right">
+	 
+		<group name="rightinfo" x="28+980" y="130-94">
+			<songpos colorPlayed="#e48300" colorBass="#7a4700" colorMed="#e48300" colorHigh="#e9c07f" >
+				<pos x="+2" y="+63" />
+				<size width="559" height="31"/>
+				<cues>
+					<size width="2" height="31"/>
+					<up x="521" y="941"/>
+					<over x="551" y="941"/>
+				</cues>
+			 </songpos>
+			 <visual type="color" source="constant 'black'" visibility="var '@$showcues' 2">
+				<Tooltip></Tooltip>
+				<pos x="+2" y="+63+18" />
+				<size width="559" height="13"/>
+			</visual>
+			<visual type="linear" orientation="horizontal" direction="right" source="song_pos" visibility="var '@$showcues' 2">
+				<Tooltip></Tooltip>
+				<pos x="+2" y="+63+19" />
+				<size width="559" height="2"/>
+				<off x="875" y="1237"/>
+				<on x="875" y="1257"/>
+			</visual>
+			<panel name="cuespos" x="+0" y="+0" visibility="not var '@$showcues' 0" >		 
+				<slider action="cue_pos 1" visibility="automix ? false : hot_cue 1">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="270" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 2" visibility="automix ? false : hot_cue 2">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="290" y="1011"/>
+						</fader>
+				</slider>
+					<slider action="cue_pos 3" visibility="automix ? false : hot_cue 3">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="310" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 4" visibility="automix ? false : hot_cue 4">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="330" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 5" visibility="automix ? false : hot_cue 5">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="350" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 6" visibility="automix ? false : hot_cue 6">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="370" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 7" visibility="automix ? false : hot_cue 7">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="390" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 8" visibility="automix ? false : hot_cue 8">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="410" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 9" visibility="automix ? false : hot_cue 9">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="430" y="1011"/>
+						</fader>
+				</slider>
+				<slider action="cue_pos 10" visibility="automix ? false : hot_cue 10">
+						<size width="559+10" height="12"/>
+						<pos x="+2-5" y="+63+21"/>
+						<fader>
+							<size width="11" height="12"/>
+							<pos x="450" y="1011"/>
+						</fader>
+				</slider>
+			</panel>
+		
+
+			<dropzone >
+				<pos x="+0-50" y="-4" />
+				<size width="610" height="100"/>
+			</dropzone>
+
+			<panel name="TextsRight" visibility="not var '@$showcover' 1">
+				<textzone >
+					<pos x="+3" y="+0" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="ARTIST" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3" y="+23" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="TITLE" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3" y="+48" />
+					<size width="47" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="COMMENT" scroll="no"/>
+				</textzone>
+				
+				<textzone >
+					<pos x="+40" y="-1" />
+					<size width="377" height="22"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="22" color="#F09B18"  format="%Author" scroll="no"/>
+					<text2 font="arial" size="22" color="#F09B18" format="%Author" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+40" y="+23" />
+					<size width="377" height="18"/>
+					<up x="+0" y="+0"/>
+						<text font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="no"/>
+					<text2 font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+54" y="+45" />
+					<size width="172" height="18"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="15" color="#d1d3d4"  align="left" format="`get loaded_song 'comment'`" scroll="yes"/>
+				 </textzone>
+			</panel>
+			<panel name="TextsRightCover" visibility="var '@$showcover' 1">
+				<cover>
+					<pos x="+0" y="-3" />
+					<size width="65" height="65"/>		
+				</cover>
+				<textzone >
+					<pos x="+3+65" y="+0" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="ARTIST" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3+65" y="+23" />
+					<size width="37" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="TITLE" scroll="no"/>
+				</textzone>
+				<textzone >
+					<pos x="+3+65" y="+48" />
+					<size width="47" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="COMMENT" scroll="no"/>
+				</textzone>
+				
+				<textzone >
+					<pos x="+40+65" y="-1" />
+					<size width="377-65" height="22"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="22" color="#F09B18"  format="%Author" scroll="no"/>
+					<text2 font="arial" size="22" color="#F09B18" format="%Author" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+40+65" y="+23" />
+					<size width="377-65" height="18"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="no"/>
+					<text2 font="arial" size="19" color="#FFFFFF"  format="%Title" scroll="yes"/>
+				 </textzone>
+				 <textzone >
+					<pos x="+54+65" y="+45" />
+					<size width="172-65" height="18"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="15" color="#d1d3d4"  align="left" format="`get loaded_song 'comment'`" scroll="yes"/>
+				 </textzone>
+			</panel>
+
+			<group name="othertexts">
+				<textzone >
+					<pos x="+420" y="+8" />
+					<size width="45" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="REMAIN" scroll="no"/>
+				</textzone>	
+				<textzone >
+					<pos x="+420" y="+35" />
+					<size width="45" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="ELAPSED" scroll="no"/>
+				</textzone>	
+				<textzone >
+					<pos x="+467" y="+31" />
+					<size width="90" height="22"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="24" color="#F09B18" align="left" format="%Pspent"/>
+				</textzone>
+				<button action="bs" query="songpos_remain 30000ms ? blink 800ms : on">
+					<Tooltip></Tooltip>
+					<pos x="+467" y="+3" />
+					<size width="90" height="22"/>
+					<text font="arial" size="24" color="#9D9E9E" align="left" format="%Pleft"/>
+					<textselected font="arial" size="24" color="#FFFFFF" align="left" format="%Pleft"/>
+				</button> 
+				
+				<textzone >
+					<pos x="+231" y="+48" />
+					<size width="23" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="KEY" scroll="no"/>
+				</textzone>	
+				<textzone >
+					<pos x="+318" y="+48" />
+					<size width="26" height="14"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="12" align="left" color="#9D9E9E"  weight="bold" format="GAIN" scroll="no"/>
+				</textzone>	
+				
+				<textzone >
+					<pos x="+254" y="+45" />
+					<size width="60" height="16"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="16" color="#FFFFFF" align="center" format="%Pkey/%Pcamelot"/>
+				</textzone>
+				<textzone >
+					<pos x="+344" y="+45" />
+					<size width="65" height="16"/>
+					<up x="+0" y="+0"/>
+					<text font="arial" size="16" color="#FFFFFF" align="left" format="%Plevel db"/>
+				</textzone>
+				
+				<button action="file_info" class="infoicon">
+					<pos x="+550" y="+0" />
+				</button>	
+				<button action="setting 'hideSonginfo'" class="eyeicon">
+					<pos x="+547" y="+22" />
+				</button>
+				 <menu class="optionsicon">
+					<tooltip>DeckOptions</tooltip>
+					<pos x="+547" y="+40" />
+					<submenu text="Track Cover">
+						<item text="No Cover" action="set '@$showcover' 0" check="var '@$showcover' 0"/>
+						<item text="Cover on Deck" action="set '@$showcover' 1" check="var '@$showcover' 1"/>
+						<item text="Cover on Jogwheel" action="set '@$showcover' 2" check="var '@$showcover' 2"/>
+					</submenu>
+					<submenu text="Track Progress bar Style">
+						<item text="Default" action="set '@$showcues' 0" check="var '@$showcues' 0"/>	
+						<item text="Cue Markers" action="set '@$showcues' 1" check="var '@$showcues' 1"/>	
+						<item text="Pioneer style" action="set '@$showcues' 2" check="var '@$showcues' 2"/>	
+					</submenu>
+					<submenu text="Track Progress bar Color">
+						<item text="Monochrome" action="setting 'ColoredWaveforms' 'monochrome'" check="setting 'ColoredWaveforms' 'monochrome'"/>	
+						<item text="Neutral" action="setting 'ColoredWaveforms' 'neutral'" check="setting 'ColoredWaveforms' 'neutral'"/>	
+						<item text="Infra-red" action="setting 'ColoredWaveforms' 'infra-red'" check="setting 'ColoredWaveforms' 'infra-red'"/>	
+						 <item text="Per-deck" action="setting 'ColoredWaveforms' 'per-deck'" check="setting 'ColoredWaveforms' 'per-deck'"/>	
+						<item text="Ultra-blue" action="setting 'ColoredWaveforms' 'ultra-blue'" check="setting 'ColoredWaveforms' 'ultra-blue'"/>	
+					</submenu>
+				</menu>
+			</group>
+			
+		</group>
+			
+		<group name="righttempoinfo" x="785+130" y="130-94">		
+			<textzone >
+				<pos x="+25" y="+0" />
+				<size width="62" height="22"/>
+				<up x="+0" y="+0"/>
+				<text font="arial" size="22" color="#F09B18" align="right"  format="%Pbpmex"/>
+			</textzone>
+			<textzone >
+				<pos x="+29" y="+20" />
+				<size width="57" height="20"/>
+				<up x="+0" y="+0"/>
+				<text font="arial" size="18" color="#FFFFFF" align="right" format="%Ppitch"/>
+			</textzone>
+			<button action="pitch_range" value="+1" rightclick="-2">
+				<pos x="+33" y="+40" />
+				<size width="50" height="12"/>
+				<text dx="0" dy="0" width="43" font="ARIAL" size="14" color="white" align="center" format="%pitchrange%%"/>
+				<up x="+0" y="+0"/>
+			</button>
+		</group>
+
+		<group name="Controlleft" x="922" y="104">
+				<button class="mixerbutton" action="play_pause" query="loaded ? play ? on : blink : off" rightclick="reverse">
+					<tooltip>Play Pause / Rightclick to play in reverse</tooltip>
+					<pos x="+45" y="+0" />
+					<text format="PLAY"/>
+					<textselected format="PLAY"/>
+				</button>
+				<button class="mixerbutton" action="cue_stop" query="loaded ? pause ? cue ? on : blink : off : off" rightclick="stop">
+					<tooltip>Cue Stop / Rightclick to Stop</tooltip>
+					<pos x="+5" y="+0" />
+					<text format="CUE"/>
+					<textselected format="CUE"/>
+				</button>
+			</group>
+			<panel name="minimixerright" x="863" y="35" visibility="skin_panel 'mixer' on">	
+				<slider class="volumeslider"><pos x="+0" y="+0" /></slider>
+				<visual class="vumeter"><pos x="+40" y="+2" />	</visual>
+				<button class="mixerbutton" action="pfl" >
+					<pos x="-50" y="+12" />
+					<text format="PFL"/>
+					<textselected format="PFL"/>
+				</button>
+			</panel>
+			<panel name="minivideoright" x="863" y="35" visibility="skin_panel 'video' on">	
+				<visual class="vumeter"><pos x="+44" y="+2" />	</visual>
+				<video source="deck" >
+					 <pos x="-60" y="+6"/>
+					 <size width="94" height="53"/>
+				</video>
+				<button class="mixerbutton" action="pfl" >
+					<pos x="+1" y="+69" />
+					<text format="PFL"/>
+					<textselected format="PFL"/>
+				</button>
+			</panel>
+	</deck>
+		
+		<slider action="crossfader" orientation="horizontal" dblclick="crossfader 50%" visibility="skin_panel 'mixer' on">	
+			<pos x="754" y="80" />
+			<size width="94" height="48"/>
+			<on x="249" y="1184"/>
+			<off x="249" y="1254"/>
+			<fader>
+				<size width="15" height="40"/>
+				<pos x="400" y="1826"/>
+			</fader>
+		</slider>
+		<slider action="crossfader" orientation="horizontal" dblclick="crossfader 50%" visibility="skin_panel 'video' on">	
+			<pos x="754" y="80+22" />
+			<size width="94" height="24"/>
+			<on x="249" y="1184+12"/>
+			<off x="249" y="1254+12"/>
+			<fader>
+				<size width="15" height="20"/>
+				<pos x="400" y="1826+10"/>
+			</fader>
+		</slider>
+		
+</panel>
+
+
+
+************************************************************
+  BROWSER
+************************************************************
+
+<browser visibility="var '$browsersize' 0">
+		<pos x="19" y="521" />
+		<size width="1563" height="363" />
+		<colors background="black">
+			<lists background="black" stripes="#1A1A1A" over="#2F3D4D" overstripes="#2F3D4D" selected="#25446B" focus="#4670A3" text="#EBECEC" overtext="#B4DDFA" selectedtext="white" focustext="white" automix="#188008" livefeedback="#4670A3"  />		
+			<prelisten background="black" selected="#25446B" cursor="#A2D9F7" buttonbackground="#2E2E2E" buttonselected="#4670A3" />
+		</colors>
+</browser>
+<browser visibility="var '$browsersize' 1">
+		<pos x="19" y="521-386" />
+		<size width="1563" height="363+386" />
+		<colors background="black">
+			<lists background="black" stripes="#1A1A1A" over="#2F3D4D" overstripes="#2F3D4D" selected="#25446B" focus="#4670A3" text="#EBECEC" overtext="#B4DDFA" selectedtext="white" focustext="white" automix="#188008" livefeedback="#4670A3"  />		
+			<prelisten background="black" selected="#25446B" cursor="#A2D9F7" buttonbackground="#2E2E2E" buttonselected="#4670A3" />
+		</colors>
+</browser>
+</Skin>
+
+
+
